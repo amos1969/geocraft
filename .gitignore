@@ -1,0 +1,8 @@
+#Ignore PDF Files
+*.pdf
+#Ignore AUX files
+*.aux
+#Ignore LOG files
+*.log
+#Ignore OUT files
+*.out
