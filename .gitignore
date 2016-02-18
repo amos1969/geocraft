@@ -6,3 +6,5 @@
 *.log
 #Ignore OUT files
 *.out
+#Ignore auto folders
+auto/
