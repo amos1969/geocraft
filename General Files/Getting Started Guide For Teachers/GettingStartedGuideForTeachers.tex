@@ -1,0 +1,266 @@
+
+% GettingStartedGuideForTeachers.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet-multipage}
+
+
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Getting Started Guide for Teachers},
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+\title{Getting Started Guide}
+\subtitle{for Teachers}
+\date{}
+
+\maketitle
+ 
+\section*{How to download the files}
+\begin{enumerate}
+\item From the GeoCraft Website, choose the resource pack that you wish to
+use.
+\item Download the zip file.
+\item Copy it on to a pen drive.
+\item Put the pen drive into the Raspberry Pi. (See the section: Pen
+  drives and the Model B Raspberry Pi)
+\item Click on Okay when asked about opening in the file manager.
+\item Copy the zip file onto the Raspberry Pi's Desktop.
+\item Right click and unzip the file.
+\item Either follow the steps on Updating the Raspberry Pi or look at
+  the section on Getting the maps in the right place.
+\end{enumerate}
+
+\section*{Pen drives and the Model B Raspberry Pi}
+If you have a newer model Raspberry Pi with 4 USB Ports just proceed
+as normal. If you are using an older Model B Raspberry Pi then you
+will only have two USB ports. If you have an empty USB port then you
+can just plug the pen drive in and retrieve the files normally. If
+like most  people you have a keyboard plugged in to one port and a
+mouse plugged in to the other then you will need to unplug the
+keyboard, plug the pen drive in retrieve the files, safely remove the
+pen drive, and plug the keyboard back in.
+
+\textbf{Potential Problems:}
+\begin{itemize}
+\item You may find that when plugging or unplugging something the
+  screen freezes, this is usually due to a minor power surge crashing
+  the Raspberry Pi. If this happens, pull out the power lead, reboot
+  the Raspberry Pi and continue as normal (if it happened when you
+  plugged in the pen drive, before you were able to transfer the
+  files, then reboot with the pen drive connected, then transfer the
+  files). 
+\item You can't find a way to safely remove the pen drive. In this
+  case you can either risk just pulling the pen drive out, or you can
+  shut the Raspberry Pi down, remove the pen drive, reconnect the
+  keyboard and reboot.
+\end{itemize}
+
+
+\section*{Update the Raspberry Pi (Optional)}
+If you have lots of Raspberry Pis to update you are better off getting
+one image sorted and copying that image onto the other SD Cards,
+rather than doing this multiple times. Or you may find it easier to
+download and install a brand new image to the SD Cards (See the
+section: Putting a new image onto the SD Cards)
+\begin{enumerate}
+\item Make sure you are connected to the internet.
+\item Click on the Menu.
+\item Click on Accessories.
+\item Click on Terminal to run it.
+\item Or on older versions double click the LXTerminal Icon on the desktop.
+\item Type \textbf{sudo apt-get update} and hit enter.
+\item Wait for the script to finish running.
+\item Type \textbf{sudo apt-get upgrade} and hit enter [Hit Enter
+  again to confirm if you are asked to continue].
+\item Wait for the script to finish running.
+\item Type \textbf{sudo apt-get dist-upgrade} and hit enter [Hit Enter
+  again to confirm if you are asked to continue]. 
+\item Wait for the script to finish running.
+\item You should now be able to use Python 3 to talk to Minecraft.
+\end{enumerate}
+
+\textbf{Optional Explanation:} The first command (\textbf{sudo apt-get update})
+downloads an up to date list of the packages that are available for
+your Operating System. The second command (\textbf{sudo apt-get
+  upgrade}) selects all of the currently installed packages which can 
+be upgraded, downloads and upgrades them. The third command
+(\textbf{sudo apt-get dist-upgrade}) checks if anything major has been 
+done to upgrade the operating system as a whole, downloads and
+installs them (this will make it possible for you to use Python 3 to
+talk to Minecraft rather than Python 2).
+
+\section*{Choosing not to update}
+
+As a minimum you will need a Raspberry Pi which has Minecraft (for the
+Raspberry Pi) installed. This will automatically put the Python files
+you need in the correct place for Python to find them. If you manually
+installed Minecraft you may not have the correct files in the correct
+places and it is recommended that you update.
+
+Older versions of Minecraft came with API files (the special
+files which tell Python how to talk to Minecraft) which only worked
+with Python 2. Which is fine but has slightly different syntax to
+Python 3 that most schools are using when teaching Python.
+If you choose not to update, then you may find that programs are called
+by different names than those described in these documents, or are
+located in different places in the Start Menu. It is highly
+recommended that you use as up to date a version of the Operating
+System as possible but sometimes this is not feasible in a School
+environment. 
+
+\section*{Putting a new image onto the SD Cards}
+The Raspberry Pi website always contains up to date images. Go to
+{\textcolor{greenish} {\url{https://www.raspberrypi.org/downloads/}}} and download either the
+NOOBS image or the Raspbian image. \vspace{0.5cm}
+
+If you downloaded the NOOBS image use the guide here:
+{\textcolor{greenish} {\url{https://www.raspberrypi.org/help/noobs-setup/}}} to help you use it
+to install Raspbian. \vspace{0.5cm}
+
+If you downloaded the Raspbian image directly then use the guide here:
+{\textcolor{greenish} {\url{https://www.raspberrypi.org/documentation/installation/installing-images/README.md}}}
+to guide you through the process of installing it onto your SD Card. \vspace{0.5cm}
+
+If you bought a card with a pre-installed image on it, then you should
+attempt to update it as per the instructions above to ensure that it
+contains the latest versions of files.
+
+\section*{Which version of Python?}
+\begin{enumerate}
+\item Find Python 3 in the Start Menu or on the Desktop, depending on how up
+to date your Operating System is this might be called Python3 or
+IDLE3. 
+\item Open it up. This should display the Python Shell, an
+interactive interpreter which allows you to communicate with
+Python. 
+\item Double check that you have opened the Python 3 version by
+looking at the first line in the window, it should mention the Python
+version (something like Python 3.2.3 and then a date). 
+\item You should also see three arrows: \verb|>>>| This is where we can type
+  our commands. 
+\item At this command prompt type the following: 
+\lstinline{import mcpi.minecraft} and hit enter.
+\item If you just see a new line with three more arrows then you are
+  good to go and can use Python 3 to talk to Minecraft. If this is the
+  case you can ignore the rest of this section.
+\item If instead you see some red writing, double check your typing
+  and if everything was correctly typed but still gives you red
+  writing then it is likely that the required files are not available
+  for Python 3.
+\item If the Python 3 files are not installed you will have to use
+  Python 2 instead. Close the Python 3 shell and instead open up the
+  Python 2 version which is probably called Python 2, IDLE2 or
+  potentially just Python or IDLE.
+\item When the shell opens this time it should have the word Python
+  followed by 2 followed by another number (probably a 7). This tells
+  you that you have started the Python 2 shell.
+\item At the command prompt indicated by the three arrows \verb|>>>| again
+  type: \lstinline{import mcpi.minecraft} and hit enter.
+\item If you see red writing this time then Minecraft is not installed
+  at all for either of your versions of Python and you will need to
+  either update your Operating System or download and install a new
+  version. 
+\item If you just see a new version of the command prompt \verb|>>>| with
+  no red writing then you are good to go and just need to remember
+  that all of your Minecraft Python programs need to be run using
+  Python 2.
+\end{enumerate}
+
+\section*{Getting the maps in the right place}
+The sections entitled On the first go and After the first go, detail
+how to use a reasonably automated method to reset the maps for
+whichever location you are working with. Unfortunately this process
+does not seem to always work properly (especially if you have chosen
+to use an older version of the Operating System). Therefore if the
+automated methods don't work then there are also details of how to
+manually reset the maps. \vspace{0.5cm}
+
+\textbf{USING THE FOLLOWING METHODS WILL OVERWRITE ANY PREVIOUS
+  VERSIONS OF THE MINECRAFT MAPS YOU HAVE USED AND ANY CHANGES MADE BY
+  STUDENTS WILL BE LOST. SEE THE FINAL SECTION \textit{KEEPING THE WORK} TO
+  FIND OUT HOW TO AVOID THIS.}
+
+\section*{On the first go}
+\begin{enumerate}
+\item Go into the folder you unzipped previously (Double click on its'
+  folder icon to do this)
+\item In the folder, find the Maps folder, and go into that folder.
+\item Find the file called \textbf{ResetGeoCraftMaps.py}.
+\item Right click on the file.
+\item Select Properties.
+\item Click on the Tab marked Permissions.
+\item Click on the options to the right of the word Execute.
+\item Select the word Anyone from the list.
+\item Click Okay.
+\item Move on to the next section now.
+\end{enumerate}
+
+\section*{After the first go}
+\begin{enumerate}
+\item Make sure that Minecraft is not running a map at the moment
+  (Quit to title if it is).
+\item Double click on the file called \textbf{ResetGeoCraftMaps.py}.
+\item In the window which pops up select Execute not Execute in terminal.
+\item When the new window opens, read the warning and click the button
+  if you wish to proceed.
+\item This will place a clean version of the map you've downloaded
+  into the right place for Minecraft to find it. 
+\item It will replace any existing copies of the map with new ones,
+  and thus erase any changes you've made to the map in Minecraft.
+\end{enumerate}
+
+\section*{Manually updating the maps}
+\begin{enumerate}
+\item Ensure that Minecraft is not running.
+\item You will need to go in to the downloaded folder which you unzipped
+(Double click on its' folder icon to do this).
+\item Find the Maps folder and go in to that by double clicking its'
+  icon.
+\item Highlight the folder or folders which actually contain the map, these will
+  normally be called by some version of the name of the place. 
+\item Select copy from the Edit Menu to copy the folders you have
+  highlighted.
+\item Go to the home folder for the Raspberry Pi (if you can see the
+  folder list on the left it will have a picture of a house with the
+  name pi next to it click on it, or click on the image of house on
+  the menu bar if you can see it, or in the text box in the menu bar
+  type /home/pi and hit Enter)
+\item Once you are in the Home folder you need to go to the View Menu
+  and select Show Hidden to show all of the hidden files and folders
+  in there
+\item You need to double click the folder marked .minecraft (notice
+  the full stop at the beginning) to enter it.
+\item Double click the games folder
+\item Double click the com.mojang folder
+\item Double click the minecraftWorlds folder
+\item Delete any pre-existing Minecraft maps folders in this folder
+  which you are not wishing to keep (such as folders with the same
+  names as the ones you are about to paste). If you want to keep the
+  maps then rename the existing folders before you paste them (TIP if they
+  contain a specific student's work rename the folder to have their
+  name). 
+\item Paste the map folders you copied earlier (CTRL-V, or right click
+  and paste or select Paste from the Edit Menu).
+\item Start Minecraft, start a game, to select a world you can
+  navigate left and right using the A and D keys, to start the world
+  you have selected click on it with the mouse. \textbf{DO NOT CLICK
+    ON START NEW} as this ignores the world you have selected and just
+  creates a new one.
+\end{enumerate}
+
+\section*{Keeping the work}
+If you need to keep a specific Map/World in which a student has been
+working, then you need to follow Steps 6-12 in the section entitled
+Manually updating the maps.
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
