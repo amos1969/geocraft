@@ -2,10 +2,10 @@
  "MinecraftBlocks"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("geocraft-worksheet" "twocolumn")))
+                     '(("geocraft-worksheet-multipage" "twocolumn")))
    (TeX-run-style-hooks
     "latex2e"
-    "geocraft-worksheet"
-    "geocraft-worksheet10"
+    "geocraft-worksheet-multipage"
+    "geocraft-worksheet-multipage10"
     "supertabular")))
 
