@@ -8,3 +8,5 @@
 *.out
 #Ignore auto folders
 auto/
+#Ignore .directory files
+.directory
