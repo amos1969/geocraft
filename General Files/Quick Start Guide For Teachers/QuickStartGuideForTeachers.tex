@@ -1,0 +1,76 @@
+
+% QuickStartGuideForTeachers.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet-multipage}
+
+
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Quick Start Guide for Teachers},
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+\title{Quick Start Guide}
+\subtitle{for Teachers}
+\date{}
+
+\maketitle
+
+This guide assumes that you have an up to date image of the Operating
+System for the Raspberry Pi, which will mean you are able to use
+Python 3 to talk to Minecraft and all of the files will be located in
+the correct places. If you run in to problems, please refer to the
+Getting Started Guide for Teachers which contains much more detailed
+instructions about how to get started. 
+
+\section*{How to Download the Files}
+\begin{enumerate}
+\item From the GeoCraft Website, choose the resource pack that you wish to
+use.
+\item Download the zip file.
+\item Copy it on to a pen drive.
+\item Put the pen drive into the Raspberry Pi.
+\item Click on Okay when asked about opening in the file manager.
+\item Copy the zip file onto the Raspberry Pi's Desktop.
+\item Right click and unzip the file.
+\item Follow the steps in the next section.
+\end{enumerate}
+
+\section*{On the first go}
+\begin{enumerate}
+\item Go into the folder you unzipped previously by double clicking on
+  it.
+\item In the folder, find the Maps folder, and go into that folder.
+\item Find the file called ResetGeoCraftMaps.py.
+\item Right click on the file.
+\item Select Properties.
+\item Click on the Tab marked Permissions.
+\item Click on the options to the right of the word Execute.
+\item Select the word Anyone from the list.
+\item Click Okay.
+\item Move on to the next section now.
+\end{enumerate}
+
+\section*{After the first go}
+\begin{enumerate}
+\item Make sure that Minecraft is not running a map at the moment
+  (Quit to title if it is).
+\item Double click on the file called ResetEdinburghMaps.py.
+\item In the window which pops up select Execute not Execute in terminal.
+\item When the new window opens, read the warning and click the button
+  if you wish to proceed.
+\item This will place a clean version of the map you've downloaded
+  into the right place for Minecraft to find it. 
+\item It will replace any existing copies of the map with new ones,
+  and thus erase any changes you've made to the map in Minecraft.
+\end{enumerate}
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
