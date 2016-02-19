@@ -1,0 +1,200 @@
+
+\documentclass{geocraft-lesson-plan}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft Lesson Plan: Programming the Giant's Causeway Part 1 - Sequencing}, 
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+
+\mytitle{Programming the Giant's Causeway}
+\subtitle{Part 1 - Sequencing}
+\duration{1 hour}
+
+\section*{Overview} This is one of a series of lessons aimed at using Minecraft and Python on the Raspberry Pi to
+develop students' basic understanding of programming. In this series we use the area around the Giant's Causeway in 
+Northern Ireland as our location, and build up gradually to the point where students will have enough knowledge to
+recreate a rough version of the Causeway. As Minecraft is limited to using square based blocks only, by definition the
+stacks which the students will create will be cuboids rather than Hexagonal Prisms but a similar looking structure is
+easily within the capabilities of most students.
+
+\section*{Objectives}
+
+\begin{itemize}
+\item Use sequencing in programs.
+\item Detect and correct errors in algorithms and programs.
+\item Use logical reasoning to explain how a simple algorithm works.
+\item Design and debug programs that accomplish certain goals.
+\end{itemize}
+
+\section*{Links to the Progression Pathways?}
+
+\begin{itemize}
+\item Has practical experience of a high-level textual language, including using standard libraries when
+  programming. (AB) (AL) 
+\item Declares and assigns variables. (AB)
+\item Knows and uses functions appropriately. (AL) (AB)
+\item Detects and corrects syntactical errors. (AL)
+\end{itemize}
+
+\section*{Python constructs used}
+
+\begin{itemize}
+\item Importing from a module. (Using an external code library)
+\item Creating a variable and assigning a value to it. (Variable creation and assignment) 
+\item Calling a function with no parameters. (Using a reusable piece of code - a function)
+\item Calling a function with one or more parameters. (Passing parameters into a function)
+\end{itemize}
+
+\section*{MinecraftPi API Functions used}
+
+\begin{itemize}
+\item Importing the main Minecraft module.
+\item Importing the blocks module.
+\item Calling the create() function to establish a connection from the program to Minecraft.
+\item Using the getPos() function to return the player's coordinates.
+\item Accessing the x, y and z attributes of the object returned by the getPos() function.
+\item Using the setBlock(...) function.
+\item Creating different block types.
+\item Using the setBlocks(...) function.
+\item Dealing with the coordinate system in Minecraft.
+\end{itemize}
+
+\section*{Introduction to Northern Ireland Theme}
+\begin{itemize}
+\item Ask pupils to find Northern Ireland on on a map, or fly to it from your own location using Google Earth. Where is
+it in relation to your school?  
+\item Ensure they know that the Giants Causeway is an area of about 40,000 interlocking basalt columns, the result of an
+ancient volcanic eruption. 
+\end{itemize}
+
+\section*{Video Starter}
+\begin{itemize}
+\item YouTube explanation of sequencing: 
+  {\textcolor{greenish}
+    {\url{https://www.youtube.com/watch?v=FHsuEh1kJ18}}}
+\end{itemize}
+
+\section*{Unplugged Starter} You may need to register with Barefoot Computing to access the following resource, don't
+worry it's free.
+\begin{itemize}
+\item Unplugged sequencing activity in pairs  
+  {\textcolor{greenish}
+    {\url{http://barefootcas.org.uk/programme-of-study/understand-algorithms/ks1-crazy-character-algorithms-activity/}}} 
+\end{itemize}
+
+\section*{Introduction to Minecraft on the Raspberry Pi}
+\begin{itemize}
+\item Allow pupils time to tinker and orientate themselves in the Minecraft game. Perhaps get them to build a colourful house. 
+\item Once they've spent some time just playing with Minecraft, get them to open Idle3 from the Programming section of
+  the Menu.
+\item Explain that this starts the Python Shell which is where any messages from Python will be displayed. For instance
+  if they introduce a bug into their code this is probably where the error message will display.
+\item Explain that they need to create a new file to hold their Python code. They can do this by clicking on the File
+  Menu in the Python Shell window and selecting ``New File''. This should open a new window. 
+\item In this new window they need to click on the File Menu and select ``Save As''. Call the file by their name and
+  click Okay.
+\item When they start writing their code they need to do it in this new, empty file, which they have just created.
+\end{itemize}
+
+\section*{Related Activities}
+\begin{itemize}
+\item Get students to work through activities which require them to create simple algorithms by putting instructions
+  into the correct order (i.e. sequencing).
+\item Barefoot CAS Viking Raid Animation Activity
+  {\textcolor{greenish}
+    {\url{http://barefootcas.org.uk/programme-of-study/use-sequence-in-programs/upper-ks2-viking-raid-animation-activity/}}}
+\item Get students to work with and solve problems involving 3D coordinates.
+\item Use Multilink Cubes (ask your Maths Department if they have any) to solve 3D problems made from cubes.
+\end{itemize}
+
+\section*{Main Activity}
+\begin{itemize}
+\item This first lesson is all about sequencing, i.e. putting instructions in the correct order to make things happen in
+  the code. When the program is run it will step through the lines of code in order, each line will either cause some
+  change in the current state of the program, some might create variables, some might send a message to Minecraft etc.
+\item Python will keep track of where it is in the program and deal with the code accordingly. Later on we will create
+  more complicated programs which won't just step line by line through the code which is written (but this is for a
+  later lesson).
+\item The initial program on the worksheet will create a Stone block next to the player's feet. It does this by
+  detecting the player's coordinates and storing them into the variables x, y and z, before then creating a Stone block
+  at those coordinates. You may need to explain 3D coordinates to the students (in Minecraft the x-axis and z-axis run
+  parallel to the ground, whilst the y-axis is vertical).
+\item There then follow a number of challenges, firstly to make the block appear in different positions relative to the
+  player. By adjusting the x, y, and z variables inside the setBlock command.
+\item The students are then asked to change the type of block which will appear, there is a sheet with a list of all
+  possible valid block types in the General Files section of the download. Whichever block they choose to use, they need
+  to use the name (all in capitals) in their code. It needs to replace the name STONE (which is in capitals) in the
+  setBlock command, they still need to include the block. before it and the .id after it, so if they chose to use the
+  GRASS block instead, that part of the command would read \textbf{block.GRASS.id} 
+\item The Gold challenge introduces a new command which will teleport the player (aka Steve) around the map.
+\item The second half of the lesson focuses on creating large blocks using the \textbf{setBlocks} command (note the
+  extra \textbf{s} on the end of the command. You need to flag it up to the students as they will often miss it.
+\item The x, y, z and x1, y1, z1 coordinates, constitute two diagonally opposite corners (vertices) of a cuboid, the
+  bigger the difference between them, the bigger the cuboid. Which is the key to the first of the challenges.
+\item The second challenge will require them to make repeated calls to the \textbf{setBlocks} command, but with
+  different coordinates for each.
+\item The final challenge will require them to think carefully about the coordinates of the solid block and the
+  coordinates of the air block inside relative to the solid block.
+\end{itemize}
+
+\section*{Plenary - Suggested Activities}
+\begin{itemize}
+\item Pick a couple of pairs to show and explain what they did with the code. 
+\item Check whole class understanding with quick fire questions about different parts of the code. 
+\item Share good ideas with the rest of the class.
+\item Try a two stars and a wish activity, students write down two things they've learned/enjoyed and one thing they
+  wish they could learn more about/improve in their code.
+\item Create a Kahoot or similar quiz to test their knowledge of the various things they've learnt.
+\item Give them some find the bug/fix the code style activities based on the code they've worked with.
+\item Something else? Please share any good ideas, via the GeoCraft Website.
+\end{itemize}
+
+
+\section*{Stretch \& Challenge}
+\begin{itemize}
+\item For those students finding the tasks too easy, set them the challenge of creating a building such as a castle,
+  just using Python.
+\item Alternately get them to write code which builds letters out of blocks so that they can spell their name.
+\end{itemize}
+
+\section*{Support}
+\begin{itemize}
+\item Some children may need reassurance if they have lots of the errors in the code.
+\item Teach them to become independent learners using techniques such as 3 Before Me.
+\item If they have an error message they don't understand, can they Google for an answer (try pasting the final line or
+  lines of the error message into Google)?  
+\item Are there solutions to similar problems on StackOverflow?
+\item Can they find solutions to their problems using the Python Documentation on the Python website?
+\end{itemize}
+
+\section*{Assessment Opportunities}
+\begin{itemize}
+\item Photographs taken of the code to assess understanding. 
+\item Children explain what they have done in an evaluation sheet or Computing log.   
+\item Students make a screencast of their Minecraft creation, narrating what the code does.
+\item What parts of the code did they complete? Keep a record of all possible parts and their progress.
+\end{itemize}
+
+%\section*{Key Vocabulary}
+
+%\section*{Curriculum Links}
+
+\section*{Resources}
+\begin{itemize}
+\item Causeway map
+\item Introduction sheet (Getting Started Guide for Students)
+\item Giant’s Causeway Worksheet 1
+\end{itemize}
+
+%\section*{Useful Links}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
