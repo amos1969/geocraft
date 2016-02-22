@@ -1,0 +1,195 @@
+
+\documentclass{geocraft-lesson-plan}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft Lesson Plan: Programming the Giant's Causeway Part 2 - Iteration},
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+
+\mytitle{Programming the Giant's Causeway}
+\subtitle{Part 2 - Iteration}
+\duration{1 hour}
+
+\section*{Overview} This is one of a series of lessons aimed at using Minecraft and Python on the Raspberry Pi to
+develop students' basic understanding of programming. In this series we use the area around the Giant's Causeway in
+Northern Ireland as our location, and build up gradually to the point where students will have enough knowledge to
+recreate a rough version of the Causeway. As Minecraft is limited to using square based blocks only, by definition the
+stacks which the students will create will be cuboids rather than Hexagonal Prisms but a similar looking structure is
+easily within the capabilities of most students.
+
+\section*{Objectives}
+\begin{itemize}
+\item Designs simple algorithms using loops.
+\item Uses loops within a program
+\item Detect and correct errors in algorithms and programs.
+\end{itemize}
+
+\section*{Links to the Progression Pathways?}
+
+\begin{itemize}
+\item Understands that iteration is the repetition of a process such as a loop. (AL)
+\item Can identify similarities and differences in situations and can use these to solve problems (pattern
+  recognition). (GE) 
+\item Uses and manipulates one dimensional data structures. (AB)
+\item Detects and corrects syntactical errors. (AL)
+\end{itemize}
+
+\section*{New python constructs used}
+
+\begin{itemize}
+\item Import the random library
+\item Use the random.randint(...) function
+\item Use the random.choice() function
+\item Use a while loop
+\item Pass extra data into a function
+\end{itemize}
+
+\section*{New MinecraftPi API Functions used}
+
+\begin{itemize}
+\item Pass data for a block into the \textbf{setBlock(...)} function.
+\end{itemize}
+
+\section*{Video Starter}
+\begin{itemize}
+\item YouTube explanation of iteration (by Mark Zuckerberg): 
+  {\textcolor{greenish}
+    {\url{https://m.youtube.com/watch?v=mgooqyWMTxk}}}
+\end{itemize}
+
+
+\section*{Unplugged Starter}
+\begin{itemize}
+\item Use this resource from code.org, to help students grasp the concept of iteration (loops): 
+  {\textcolor{greenish}
+    {\url{https://code.org/curriculum/course2/5/Activity5-GettingLoopy.pdf}}}
+\item If you feel that the students need to spend longer on loops and iteration, there is a complete lesson here:  
+  {\textcolor{greenish}
+    {\url{https://code.org/curriculum/course2/5/Teacher}}}
+\end{itemize}
+
+\section*{Programming Minecraft Reminder}
+\begin{itemize}
+\item Remind students how to move in the game if necessary.
+\item Remind them to start the Python Shell, using IDLE3 in the Programming section of the Raspberry Pi Main Menu.
+\item Remind them to create a new file to hold their program, and save it with an appropriate name.  
+\item Remind them that when they make a change they will need to run their program to ensure it works.
+\end{itemize}
+
+\section*{Related Activities}
+\begin{itemize}
+\item Use squared paper to plan out structures/patterns which they might construct.
+\item Give students cards with various lines of Python on, get them to sort them into the correct order to achieve
+  specific activities.
+\item Flow chart their ideas for various potential programs they could make using Python and Minecraft
+\item Use Pseudocode to plan out their programs
+\end{itemize}
+
+\section*{Main Activity}
+\begin{itemize}
+\item Explain to children they will be entering Python code to make a path which follows the player around. 
+\item The first piece of code is virtually identical to the code in the previous lesson. 
+\item Essentially the only real changes are that the block appears at coordinate y-1 (which means under the player's
+feet and that there is a line which reads \textbf{while True:}, this is the command which starts a loop running. The
+\textbf{True} part means make this loop run forever. The indentation on the following lines is what tells Python that
+these lines are part of the loop, they are essentially the lines of code which will be run over and over again. In
+Python if we want to have code that isn't part of the loop, but follows after it, then we would unindent the code.
+\item Make sure that the students run their code once it has been entered, and return to the Minecraft world to see what
+effect it has.
+\item The first set of challenges involve either changing the type of block which is left behind or the positioning of
+  the blocks relative to the player. Putting two \textbf{setBlock()} commands inside the loop with slightly different
+  coordinates will cause two blocks to appear each time (if they both have the same coordinates then the second block will
+  replace the first block before you can see it appear).
+\item There is also a new part of a command. In the \textbf{setBlock()} function after block.xxxxx.id, we can pass data
+to the block to change either it's appearance or behaviour by adding a comma and a number, details of the blocks which
+can accept data and the effects of that data are included on the second page of the Minecraft Blocks Sheet. So in the
+\textbf{Bronze Challenge}, the whole line of code becomes \textbf{mc.setBlock(x, y-1, z, block.TNT.id, 1)}, to detonate the
+resulting TNT block we need to mine it.
+\item Moving on to the second half of the lesson, we add in the idea of random functions, to produce randomised paths
+  under the player's feet. 
+\item The \textbf{import random} gives us access in this program to the built in Python Random Number Library, which
+  contains functions we can use to generate a random number between two other values, or pick a random item from a list
+  or a whole host of other things. In this section we do those two things, set a variable to be random value each time
+  through the loop using \textbf{random.randint()} and then pass this value as \textbf{data} to the block we are
+  setting. We also ask them to choose a random item from a list using the \textbf{random.choice()} function, which
+  returns one value from the list which is passed into it.
+\item The main part of the program and both the \textbf{Bronze} and \textbf{Silver Challenges} ask the user to pass a
+  random integer as data to various block types. The \textbf{Silver Challenge} in particular produces quite striking
+  results. 
+\item The \textbf{Gold Challenge} takes a different approach and asks the student to create a list of different blocks,
+which they then have to randomly select one of, each time through the loop. Although there are a number of ways this
+could be done in Python we have directed students to use the \textbf{random.choice()} function here as it is the most
+straightforward for this task. The students can be directed to add extra block types to the list they create (the bit
+between the square brackets). They could also create a variable to hold the list, and then just pass the variable name
+in. Create a list variable like this: \begin{verbatim}list_of_blocks = [block.xx.id, block.yy.id, block.zz.id]\end{verbatim}  
+and then get to it in the \textbf{setBlock()} function like this  
+\begin{verbatim}mc.setBlock(x, y-1, z, random.choice(list_of_blocks))\end{verbatim}  
+\end{itemize}
+
+\section*{Plenary - Suggested Activities}
+\begin{itemize}
+\item Get students to write a program which will place 4 blocks at random distances from the player, by using
+  \textbf{random.randint()} to create values which are added or subtracted from x, y or z, in the \textbf{setBlock()}
+  function. 
+\item Give students code with bugs in them and get them to identify the bugs.
+\item Create a Kahoot quiz using fragments of code (related to today's exercises) that have syntax errors in them.
+\item Give out a number of cards one set between two, get the students to create programs by assembling the cards in the
+  correct order, to achieve specific goals.
+\item Code dominoes: Create sets of code dominoes which require the students to match pieces of code to the result of
+  running that code (either outputs or explanations).
+\item Exit tickets, students annotate what a fragment of code on their exit ticket (pre-printed) does.
+\item Exit tickets, students annotate what a fragment of code outputs..
+\item Two stars and a wish.
+\item Peer review each others work and give it feedback, before doing the same task on their own code.
+\end{itemize}
+
+\section*{Stretch \& Challenge}
+\begin{itemize}
+\item If the \textbf{Gold Challenge} is too easy, get them to make a randomly coloured ``Disco Floor'' that appears
+  around the players feet (10x10 or 15x15) works well.
+\item Perhaps get the floor to appear randomly wherever the player walks.
+\end{itemize}
+
+\section*{Support}
+\begin{itemize}
+\item When students run into difficulties, such as bugs and syntax errors. Try to teach them to be resilient and self
+  directed. 
+\item If they have an error message get them to paste it into Google to look for similar errors
+\item Teach them to use the Python Documentation website.
+\item If they experience logic errors (the code runs but in unexpected ways) get them to try some variation on Rubber
+  Duck Debugging: {\textcolor{greenish} {\url{https://en.wikipedia.org/wiki/Rubber_duck_debugging}}} Perhaps talking
+  each other through the code line by line.
+\item You as a teacher should \textbf{NOT} under any circumstances seek to fix their code. See Phil Bagge on Combating
+  Learnt Helplessness: 
+    {\textcolor{greenish} {\url{http://philbagge.blogspot.co.uk/2015/02/eight-steps-to-promote-problem-solving.html}}} 
+\end{itemize}
+
+\section*{Assessment Opportunities}
+\begin{itemize}
+\item Get students to create a screencast of what they've done, edit it and include a narrative created by them.
+\item Or do a similar thing with a video camera.
+\item Ask children to create a worksheet explaining how to achieve the task they've achieved to someone who hasn't done
+  so before.
+\item Get students to evaluate each others work according to some criteria you give them, then evaluate their own
+  according to the same criteria
+\item Give them a fix the bugs quiz, with similar code to that which they have been writing, but with bugs in, ask them
+  to find and potentially fix the bugs.
+\end{itemize}
+
+\section*{Resources}
+\begin{itemize}
+\item Causeway map
+\item Introduction sheet (Getting Started for Students)
+\item Giant’s Causeway Worksheet 2
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
