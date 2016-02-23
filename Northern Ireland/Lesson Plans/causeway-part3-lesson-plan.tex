@@ -1,0 +1,181 @@
+
+\documentclass{geocraft-lesson-plan}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft Lesson Plan: Programming the Giant's Causeway Part 3 - Selection},
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+
+\mytitle{Programming the Giant's Causeway}
+\subtitle{Part 3 - Selection}
+\duration{1 hour}
+
+\section*{Overview} This is one of a series of lessons aimed at using Minecraft and Python on the Raspberry Pi to
+develop students' basic understanding of programming. In this series we use the area around the Giant's Causeway in
+Northern Ireland as our location, and build up gradually to the point where students will have enough knowledge to
+recreate a rough version of the Causeway. As Minecraft is limited to using square based blocks only, by definition the
+stacks which the students will create will be cuboids rather than Hexagonal Prisms but a similar looking structure is
+easily within the capabilities of most students.
+
+\section*{Objectives}
+\begin{itemize}
+\item Designs simple algorithms using while loops, for loops, and selection.
+\item Uses arithmetic operators, if statements, and loops, within programs.
+\item Nest one construct inside another (if statement inside a while loop).
+\item Detect and correct errors in algorithms and programs.
+\end{itemize}
+
+\section*{Links to the Progression Pathways}
+\begin{itemize}
+\item Understands that iteration is the repetition of a process such as a loop. (AL)
+\item Uses a range of operators and expressions e.g. Boolean, and applies them in the context of program control. (AL) 
+\item Understands the difference between ‘While’ loop and ‘For’ loop, which uses a loop counter. (AL) (AB)
+\end{itemize}
+
+\section*{New python constructs used}
+\begin{itemize}
+\item if statements
+\item for loops
+\end{itemize}
+
+\section*{New MinecraftPi API Functions used}
+\begin{itemize}
+\item mc.getBlock(...) which returns the type of block at a give coordinate.
+\end{itemize}
+
+\section*{Video Starter}
+\begin{itemize}
+\item YouTube explanation of selection (by Bill Gates): 
+  {\textcolor{greenish}
+    {\url{https://m.youtube.com/watch?v=m2Ux2PnJe6E}}}
+\end{itemize}
+
+\section*{Unplugged Starter}
+\begin{itemize}
+\item Unplugged selection activity in pairs
+  {\textcolor{greenish}
+    {\url{http://code-it.co.uk/wp-content/uploads/2015/05/ConditionalSelection.pdf}}}
+\end{itemize}
+
+\section*{Scratch Starter}
+\begin{itemize}
+\item Use a Scratch activity to demonstrate how if statements
+  work. See Barefoot materials. ({\textcolor{greenish}
+    {\url{http://barefootcas.org.uk/}}})  
+\end{itemize}
+
+\section*{Programming Minecraft Reminder}
+\begin{itemize}
+\item Remind students how to move in the game if necessary.
+\item Remind them to start the Python Shell, using IDLE3 in the Programming section of the Raspberry Pi Main Menu.
+\item Remind them to create a new file to hold their program, and save it with an appropriate name.  
+\item Remind them that when they make a change they will need to run their program to ensure it works.
+\end{itemize}
+
+\section*{Related Activities}
+\begin{itemize}
+\item Use 1cm squared paper and Multilink cubes to work through line by line what each program does, maybe keep track of
+  the state of each variable at each point in the code, especially during loops.
+\item Use 1cm squared paper to work out where, relative to the player, the random stacks will appear, or the bridge
+  blocks.
+\item Using suitable materials, get students to act out the program for real (outside or in a hall, perhaps).
+
+\end{itemize}
+
+\section*{Main Activity}
+\begin{itemize}
+\item Explain to children they will be entering Python code to make a bridge beneath their feet when they walk on water. 
+\item Explain how an if statement works in Python and relate it back to Scratch, the indented part of the code in Python
+  is the equivalent of the blocks found between the jaws of the if block in Scratch. 
+\item As in the previous activity, the first part of the code is identical to the start of the code in the previous
+  sections. The coordinates of the player are stored in the variables x, y and z.
+\item The line which creates a new variable called \textbf{blockType} calls the function \textbf{mc.getBlock(x, y-1, z)}
+  which returns the type of the block beneath the player's feet (the y-1 part of the coordinates).  
+\item We then use an if statement to compare the value in the variable \textbf{blockType} with the value
+  \textbf{block.WATER\_STATIONARY.id}, if they are the same then the code which is indented runs. That is, a Stone block
+  is created under the player's feet. This only happens if the player is above a Stationary Water block.
+\item \textbf{NOTE} the comparison uses double equals \textbf{==}. 
+\item In other words if the player is walking on water then a stone block appears, otherwise it doesn't.
+\item Note that this doesn't happen if the player is standing over a \textbf{WATER/WATER\_FLOWING} block. The student
+  will need to add more code, to make this happen. There are a number of ways to do this, one way is to change the
+  comparison part of the if statement to: 
+\begin{verbatim}if blockType == block.WATER_STATIONARY.id or blockType == block.WATER.id:\end{verbatim} 
+\item The challenges then ask the students to change the block types of the bridge and the shape of the pattern of
+  blocks which are left under the player's feet (multiple calls to mc.setBlock(..) are needed for this).
+\item The second section brings in yet another new construct, the \textbf{for} loop. A \textbf{while} loop runs an
+  unspecified number of times, usually until something becomes true or something becomes false. A \textbf{for} loop in
+  the other hand runs up to a specific number of times either according to a value you give to the loop, or by accessing
+  each of the items in an object such as a loop, one at a time.
+\item The code is nearly identical to the previous code, but this time we are checking for a grass block beneath the
+  player's feet. If this is found then the indented code is run.
+\item Firstly we set a new variable \textbf{max\_height} to be  3, we then call a \textbf{for} loop. With the code
+  \begin{verbatim}for height in range(max_height):\end{verbatim} which does the following. Start by setting the \textbf{height} variable to
+  0, then set a block at the coordinates given (including adding the height to y). Next set the \textbf{height} variable
+  to be 1 and set a block at the new coordinate (1 up from the previous one). Set the height to be 2 and do the same,
+  then because the \textbf{max\_height} variable had a value of 3 stop. (The in range part stops on a value one less than
+  the value which is given to it)
+\item In other words a 3 high stack is created next to wherever we walk.
+\item To change the code for the challenges so that we can have random heights, we need to do two things, firstly add a
+  line that reads \begin{verbatim}import random\end{verbatim}so that we can access the \textbf{random} number library
+  again. We also need to change the line which currently reads \begin{verbatim}max_height = 3\end{verbatim} to read
+  something like \begin{verbatim}max_height = random.randint(0, 10)\end{verbatim}The 0 and 10 can be any numbers you
+  choose, the \textbf{randint()} function will pick random values between (and including) the two. 
+\item The other challenges should be relatively straightforward to solve by this point (use multiple for loops one for
+  each stack you are creating). 
+\end{itemize}
+
+\section*{Plenary - Suggested Activities}
+\begin{itemize}
+\item Add 10 bugs to a simple program, students have to identify the bugs as quickly as possible, and state what each
+  one does.
+\item Describe a piece of code that you want them to create to achieve a given goal, they create it.
+\item Give them a piece of code which has a specific purpose (given to them) but which contains one or more logic
+  errors, they have to find and fix the logic.
+\item Give the students an algorithm described in a flow chart they have to implement it.
+\item Give the students an algorithm described by pseudocode they have to implement it.
+\item Give the students a working program, get them to describe what it does in natural english/with a flow chart/in
+  pseudocode.
+\end{itemize}
+
+
+\section*{Stretch \& Challenge}
+\begin{itemize}
+\item What other aspects of if statements, for loops and random functions could they devise a project around?
+\end{itemize}
+
+\section*{Support}
+\begin{itemize}
+\item Referring back to ho the if statement and other constructs work in Scratch to relate them to the equivalent
+  constructs in Python.
+\item Explain their code line by line to another student, explaining what each part does and why it is there.
+\item What happens to the rest of the program if they comment out a randomly selected line of code? Why?
+\end{itemize}
+
+\section*{Assessment Opportunities}
+\begin{itemize}
+\item Get them to peer assess two other students work, then assess their own using the same criteria.
+\item Get the students to create an audio feedback file, where they have to describe what they have done with the code
+  and what it does, without ever being able to show their code or it's outcome.
+\item Get them to devise a series of criteria by which the could assess their own code, then apply them.
+\item Write a report detailing what they have done, how, and what difficulties they had.
+\item Create a screencast assessing someone else's work.
+\end{itemize}
+
+\section*{Resources}
+\begin{itemize}
+\item Causeway map
+\item Introduction sheet 
+\item Giant’s Causeway Worksheet 3
+\end{itemize}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
