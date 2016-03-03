@@ -1,5 +1,5 @@
 from mcpi.minecraft import Minecraft
-import mcpi.block as block
+from mcpi import  block
 import random
 mc = Minecraft.create()
 while True:
