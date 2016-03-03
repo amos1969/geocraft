@@ -1,0 +1,82 @@
+
+% causeway.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Programming the Giant's Causeway Part 2 - Iteration},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Programming the Giant's Causeway}
+\subtitle{Part 2 - Iteration}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+
+\setcounter {section} {2}
+
+
+\section{Make Paths Which Follow you Around}\vspace{-0.5cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{03-stones.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+
+\noindent This code creates a stone block path beneath your feet.
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the block type to be exploding
+  TNT: \lstinline{block.TNT.id, 1}
+
+\item\textbf{Silver Challenge:} Change the coordinates to leave a
+  trail in different places, try \textbf{above your head}. Try
+  placing multiple blocks at a time.
+
+\item\textbf{Gold Challenge:} By placing more than one block leave a
+  pathway made of gold and diamonds.
+
+\end{itemize}
+
+\section{Making Random Trails}\vspace{-0.5cm}
+
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{04-random-trails.py}\vspace{0.1cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+
+\noindent The import random gives us access to Python's random number
+functions, which we use to place random types of block. We can also
+use \lstinline{random.choice} to choose a random item in a list.
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the code to make it
+  select a random \lstinline{STONE_SLAB} type (they are numbered 0 to 5).
+
+\item\textbf{Silver Challenge:} Change the code to make it
+  place a random \lstinline{WOOL} block colour (the colours run from 0 to 15).
+
+\item\textbf{Gold Challenge:} Use \lstinline{random.choice([block.STONE.id, block.DIRT.id])} 
+to place a random block. Add different block types to the list to make it more exciting.
+\end{itemize}
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

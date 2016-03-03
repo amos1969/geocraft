@@ -1,0 +1,80 @@
+
+% causeway-part1.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Programming the Giant's Causeway Part 1 - Sequencing},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Programming the Giant's Causeway}
+\subtitle{Part 1 - Sequencing}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+
+\section{Place a Gold Block}
+\lstset{language=Python}\vspace{-0.5cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{01-gold.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+\vspace{0.2cm}
+
+\noindent This code creates a stone block at your feet.
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the x, y, and z values so the block
+appears next to you. \newline Try \textbf{x + 2} or \textbf{y + 3}. 
+
+\item\textbf{Silver Challenge:} Try different blocks. See if you can
+  place a \textbf{Gold Block} next to you. 
+
+\item\textbf{Gold Challenge:} Use
+\lstinline{ mc.player.setPos(50, 50,50) }
+ to teleport Steve around the map. Change the numbers to try
+  different places.
+\end{itemize}
+
+\section{Place a Larger Block}\vspace{-0.5cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{02-diamond.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+\vspace{0.5cm}
+
+\noindent The \textbf{x1, y1, z1} are the coordinates of the other corner of the
+cuboid. 
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Can you change the size of the large block?
+
+\item\textbf{Silver Challenge:} Can you create a number of cuboids of
+  different sizes around you?
+
+\item\textbf{Gold Challenge:} Can you create a block of air inside
+  another block which you have created, to make a hollow block?
+\end{itemize}
+
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,114 @@
+
+% causeway-part4.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet-multipage}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Programming the Giant's Causeway Part 4 - Functions},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+\title{Programming the Giant's Causeway}
+\subtitle{Part 4 - Functions}
+
+\date{}
+\maketitle
+
+\pagenumbering{gobble}
+
+\setcounter {section} {6}
+
+\section{Using Functions to Simplify Your Code}\vspace{-0.3cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{09-functional.py}\vspace{0.1cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+
+There is a more detailed explanation in the 'How Functions Work' sheet
+but essentially our code runs as follows: 
+
+\begin{enumerate}
+
+\item Import the modules we need, and create a connection to
+  Minecraft.
+
+\item Define a function called \textbf{main} all of the indented code
+  on the following lines is part of this definition and only gets run
+  when we call the function using \textbf{main()}.
+
+\item Define a function called \textbf{stacks}.
+
+\item Define a function called \textbf{stacker}.
+
+\item Call the function named \textbf{main}. Which means that the code
+  inside \textbf{main} will now run.
+
+\item Start the loop inside \textbf{main}, get the player's position,
+  store it in each of the three variables.
+
+\item Call the function \textbf{stacks} giving it the current position
+  of the player.
+
+\item The program now runs the code inside \textbf{stacks} using the
+  coordinates we called it with. This code in turn calls the function
+  \textbf{stacker} four times, passing it slightly different
+  coordinates on each call.
+
+\item Each time the code in \textbf{stacker} is run, the program then
+  \textbf{returns} to where it was called from, ie inside
+  \textbf{stacks}. It then moves to the next line of code and runs
+  that. 
+
+\item When the program gets to the end of the code in \textbf{stacks}
+  it will return to where \textbf{stacks} was called from, ie the last
+  line of \textbf{main}.
+
+\item Since the code inside \textbf{main} is part of a loop, the loop
+  then runs again (the next \textbf{iteration} of the loop) and
+  everything begins again at step 6 above.
+
+\end{enumerate}
+
+Now see if you can work through each of the following challenges in
+order to recreate as accurate a representation of the Giant's Causeway
+as possible using Minecraft (we will have to make square stacks rather
+than hexagonal ones unfortunately).
+
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change one of the earlier programs you
+  created to make it use functions.
+
+\item\textbf{Silver Challenge:} Change the code above to place 9
+  random height stone stacks near to you
+
+\item\textbf{Gold Challenge:} Change the code so that it only places
+  the stacks if they are on top of stone.
+
+\item\textbf{Platinum Challenge:} Change the code so that when you are
+  stood in the middle of the peninsula on the Giant's Causeway Map it
+  will place random height stacks above any existing stone blocks
+
+\item\textbf{Diamond Challenge:} Change the code so that it detects
+  when the stack will be near to water and ensures that the maximum
+  possible height is reduced (this should make the stacks look more
+  realistic).
+
+\item\textbf{Ultimate Challenge:} Make the stacks look more realistic
+  by using blocks such as \lstinline{MOSS_STONE} and anything else you can think of.
+
+\end{itemize}
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

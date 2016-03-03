@@ -1,0 +1,81 @@
+
+% causeway-part3.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Programming the Giant's Causeway Part 3 - Selection},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Programming the Giant's Causeway}
+\subtitle{Part 3 - Selection}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+
+
+\setcounter {section} {4}
+
+\section{Make a Bridge Over Water}\vspace{-0.5cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{06-bridge.py}\vspace{0.1cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+\vspace{-0.1cm}
+\noindent This code creates a stone block path beneath your feet when
+you are above water.\vspace{-0.1cm}
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the block type to make an Iron Bridge.
+
+\item\textbf{Silver Challenge:} Change the code so that you create a
+  bridge which is 3 blocks wide (you can use Stone or Iron or some
+  other type of block).
+
+\item\textbf{Gold Challenge:} Change the code so that the bridge is 3 blocks wide in the North/South direction
+and in the East/West direction, like a cross, when you walk across the water.
+
+
+\end{itemize}
+
+\section{Making Random Stacks}\vspace{-0.5cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{07-stacks.py}\vspace{0.1cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+\vspace{-0.1cm}
+\noindent If the block under your feet is grass, then this code will
+place a 4 high stack of grass blocks next to you.\vspace{-0.1cm}
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Can you change the code to make it
+  place a random height stack of blocks?
+
+\item\textbf{Silver Challenge:} Can you change the code to make it
+  place 3 different random height stacks next to each other?
+
+\item\textbf{Gold Challenge:} Now change it so that it places 9 random
+  stacks in a square grid behind you as you move.
+\end{itemize}
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

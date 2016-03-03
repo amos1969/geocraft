@@ -1,0 +1,126 @@
+
+% how-functions-work.tex - Our first LaTeX example!
+\documentclass{geocraft-worksheet-multipage}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Programming the Giant's Causeway - How
+              Functions Work},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+\title{Programming the Giant's Causeway}
+\subtitle{How Functions Work}
+
+\date{}
+\maketitle
+
+\pagenumbering{gobble}
+
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{09-functional.py}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{giants-causeway}%
+%
+\vspace{0.2cm}
+
+The code does lots of things, but mainly we have broken it down into
+logical sections (called functions) which we can use anywhere in the
+code, as building blocks to make more complicated programs. Our
+example contains definitions for 3 functions called: \textbf{main,
+  stacks} and \textbf{stacker}. \vspace{0.5cm}
+
+
+The indented python after each use of the word \textbf{def} is called
+a \textbf{function definition}. It is where we tell python what code to run
+when we see each function name.  \vspace{0.5cm}
+
+
+When we run the program, it goes through the normal process of
+importing the libraries/modules we are using and then establishes the
+connection to Minecraft as normal (\textbf{lines 1, 2, and 3}). Then
+we come to \textbf{line 5} which contains the code 
+\textbf{def main():} this is the line which tell Python: here is a
+\textbf{def}inition for the function called \textbf{main}, the
+brackets are also part of the definition (if we want to pass any
+values to the function to use we do it in there) and the colon tells
+Python that the next lines will be indented and are going to contain
+the \textbf{body} of our function. \vspace{0.5cm}
+
+
+The \textbf{main} function contains code for a while loop which runs
+indefinitely, inside the loop we constantly get the position of the
+player, create/update variables corresponding to the coordinates, and
+pass those current coordinates to another function called
+\textbf{stacks}. When we first run the program, Python will see the
+function definition and the body of the function but will \textbf{NOT}
+run any code at this point. Instead it notes down where to find the
+definition for main, and what code to run when it is
+called. \vspace{0.5cm}
+
+\newpage
+
+Effectively what you are doing with a function definition is
+extending Python by creating your own commands, this one is called
+\textbf{main} and to run it we would use \textbf{main()}. Which is the
+code which is found on the very last line of the program. Python notes
+down where all 3 of the \textbf{function definitions} are and then
+reaches the final line of the program which calls the \textbf{main} function
+and starts everything going. We have called it \textbf{main} because
+it contains the main part of the program we want to run, it doesn't
+actually matter what the function is called (we could just as easily
+name it Harry, Ron, Hermione, Luke, Leia, or Han) as long as we
+remeber when we get to the end of the code what we called it and use
+that name to call it. Convention is to name it something relevant to
+the program rather than a fictional name, though. 
+\vspace{0.5cm} 
+
+
+When \textbf{main()} is called, the code inside the definition runs
+and at the end of each time through the loop (on each iteration) the
+function called \textbf{stacks} is called, and is passed the three
+coordinates which we have set. \textbf{Stacks} is another of our
+functions which we have defined. The \textbf{function definition}
+contains 4 lines of code, each of these lines is a call to another
+of our functions \textbf{stacker}, which we call each time with
+slightly different versions of the coordinates.  \vspace{0.5cm}
+
+
+When the function \textbf{stacker} is called the first time, we give it
+the coordinates of the player, with the x-coordinate and the
+z-coordinate reduced by 3. The line of code inside \textbf{stacker}
+runs and creates a 5 block high stack of blocks on these
+coordinates. Then without any extra code being added it automatically
+goes back to the point in the code it was called from (it
+\textbf{returns}) and the next line of code is executed. This is again
+a call to the \textbf{stacker} function with modified coordinates, it
+returns and the next line executes, until all 4 lines within the
+\textbf{stacks} function have run.  \vspace{0.5cm}
+
+
+At this point we have reached the end of the \textbf{stacks} function,
+so the code \textbf{returns} to where it was called from (the last
+line of the while loop inside the main function. Since the last line
+of the loop has been reached, the program then checks whether we can
+run the loop again (because it says \textbf{True} it will always run)
+and restarts the loop. The code in the loop then gets the player's
+current position again, sets the variables for the coordinates and
+calls the \textbf{stacks} function with our new values.  \vspace{0.5cm}
+
+
+This process will repeat for ever until we tell Python that we want
+the loop to exit (hold the control key down and press c in the Python
+Shell) or we run a new Python program, which will restart the Shell.
+\vspace{0.5cm} 
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
