@@ -1,5 +1,5 @@
 from mcpi.minecraft import Minecraft
-import mcpi.block as block
+from mcpi import  block
 mc = Minecraft.create()
 pos = mc.player.getPos()
 x = pos.x + 1
