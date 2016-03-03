@@ -1,0 +1,158 @@
+
+\documentclass{geocraft-lesson-plan}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft Lesson Plan: Programming the Giant's Causeway Part 4 - Functions},
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+
+\mytitle{Programming the Giant's Causeway}
+\subtitle{Part 4 - Functions}
+\duration{1 hour}
+
+\section*{Overview} This is one of a series of lessons aimed at using Minecraft and Python on the Raspberry Pi to
+develop students' basic understanding of programming. In this series we use the area around the Giant's Causeway in
+Northern Ireland as our location, and build up gradually to the point where students will have enough knowledge to
+recreate a rough version of the Causeway. As Minecraft is limited to using square based blocks only, by definition the
+stacks which the students will create will be cuboids rather than Hexagonal Prisms but a similar looking structure is
+easily within the capabilities of most students.
+
+\section*{Objectives}
+\begin{itemize}
+\item Use sequencing in programs.
+\item Designs simple algorithms using loops, and selection i.e. if statements.
+\item Uses arithmetic operators, if statements, and loops, within programs.
+\item Designs, writes and debugs modular programs using procedures.
+\item Knows that a procedure can be used to hide the detail with sub-solution (procedural abstraction).
+\item Detect and correct errors in algorithms and programs.
+\end{itemize}
+
+
+%\section*{Links to the Progression Pathways}
+%\begin{itemize}
+%\item 
+%\end{itemize}
+
+\section*{Links to the National Curriculum}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\section*{New python constructs used}
+\begin{itemize}
+\item Creating a function with no parameters
+\item Creating a function with multiple parameters
+\end{itemize}
+
+\section*{New MinecraftPi API Functions used}
+\begin{itemize}
+\item No new constructs, but all of the previous ones need to be utilised.
+\end{itemize}
+
+\section*{Video Starter}
+\begin{itemize}
+\item YouTube explanation of funtions: 
+  {\textcolor{greenish}
+    {\url{https://m.youtube.com/watch?v=0eo0ESEX9DE}}}
+\end{itemize}
+
+\section*{Unplugged Starter}
+\begin{itemize}
+\item There is a nice whole lesson idea from code.org, which will introduce the concept of a function:  
+  {\textcolor{greenish}
+    {\url{https://studio.code.org/unplugged/unplug5.pdf}}}
+\end{itemize}
+
+\section*{Scratch Starter}
+\begin{itemize}
+\item Use a Scratch activity to demonstrate how functions work, see:
+  {\textcolor{greenish} {\url{http://wiki.scratch.mit.edu/wiki/Custom_Blocks}}}. 
+\end{itemize}
+
+\section*{Programming Minecraft Reminder}
+\begin{itemize}
+\item Remind students how to move in the game if necessary.
+\item Remind them to start the Python Shell, using IDLE3 in the Programming section of the Raspberry Pi Main Menu.
+\item Remind them to create a new file to hold their program, and save it with an appropriate name.  
+\item Remind them that when they make a change they will need to run their program to ensure it works.
+\end{itemize}
+
+\section*{Related Activities}
+\begin{itemize}
+\item Model each individual function's effects using Squared paper and multilink cubes.
+\item Do a walk-through at the function level of what each component will do.
+\item Get students to use video cameras to create a walk-through of their program using multilink.
+\end{itemize}
+
+\section*{Main Activity}
+\begin{itemize}
+\item The code at the top is explained in the section below it (a more detailed explanation is available on the ``How 
+  Functions Work'' worksheet.
+\item Being able to trace the flow of a computer program containing functions/procedures seems to be a key skill
+  associated with learning how to program a computer.
+\item The \textbf{Bronze Challenge} asks the students to rewrite a previous program to use at least one function.
+\item Some example versions of these programs can be found with the other code samples.
+\item The \textbf{Silver Challenge} gets them to change the code in the example program to place 9 stacks instead of the
+  current 4. Plus the new stacks need to have a random height (\textbf{HINT:} The \verb!b+5! in the stacker function is
+  what sets the height, replace the \verb!+5! with \verb!+a_random_number! that you set yourself)
+\item The \textbf{Gold Challenge} asks them to only place blocks if they're on top of stone, this is similar to the
+  Bridge over Water task they did previously. Both this and the \textbf{Silver Challenge} should be done using
+  functions. 
+\item The \textbf{Platinum Challenge} is just a development of the previous one as are the last two.
+\item All of the challenges build on work completed in the previous lessons.
+\item There will be code examples supplied.
+\end{itemize}
+
+\section*{Plenary}
+\begin{itemize}
+\item Provide students with a framework to self assess their work.
+\item Maybe get them to peer assess each other according to the same framework.
+\item Put scenarios on the board, ask them to explain, how they would code up each scenario, to each other. 
+\item A variety of quizzes and other formative assessment tools could be used to check their understanding of the
+  underlying concepts.
+\item Exit tickets, two stars and a wish, and other common plenary activities could also be used.
+\end{itemize}
+
+
+\section*{Stretch \& Challenge}
+\begin{itemize}
+\item Students who complete the main task can add to their programs in a variety of ways to try and make the whole
+  environment as realistic as possible. Are there trees on that part of the coast? How can they make ``realistic''
+  looking trees in code?
+\end{itemize}
+
+\section*{Support}
+\begin{itemize}
+\item Make sure the students utilise the various self help techniques that have been discussed over the last few
+  lessons. 
+\item These techniques are what will help the students to become self reliant and independent learners in Computing. 
+\item At no point should you just tell students where their mistake is, if you fix their code then they will expect you
+  to always fix it when they have a problem.
+\end{itemize}
+
+\section*{Assessment Opportunities}
+\begin{itemize}
+\item Students create a full write up of what they've done, how they designed their program, how they implemented and
+  tested it, including an evaluation of what they've done.
+\item Use the students' peer and self evaluations as the basis of the assessments.
+\end{itemize}
+
+\section*{Resources}
+\begin{itemize}
+\item Causeway map
+\item Introduction sheet 
+\item Giant’s Causeway Worksheet 4
+\item How Functions Work Sheet
+\end{itemize}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
