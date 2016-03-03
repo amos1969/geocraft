@@ -1,7 +1,7 @@
 from mcpi.minecraft import Minecraft
-import mcpi.block as block
+from mcpi import block
 import random
-mc = Minecraft.create(name="amos1969", address="192.168.0.15")
+mc = Minecraft.create()
 while True:
     pos = mc.player.getPos()
     x = pos.x
