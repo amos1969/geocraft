@@ -1,8 +1,8 @@
 from mcpi.minecraft import Minecraft
-import mcpi.block as block
+from mcpi import  block
 import random
 
-mc = Minecraft.create(address="192.168.0.15", name="amos1969")
+mc = Minecraft.create()
 some_blocks = [block.GOLD_BLOCK.id, block.DIAMOND_BLOCK.id,
                block.LAPIS_LAZULI_BLOCK.id, block.OBSIDIAN.id,
                block.IRON_ORE.id, block.BRICK_BLOCK.id]
