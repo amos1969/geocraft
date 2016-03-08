@@ -9,7 +9,7 @@
 
 \ProvidesClass{geocraft-lesson-plan}
 
-\LoadClass[12pt]{article}
+\LoadClass[a4paper, 12pt]{article}
 
 % fields that user can set (in addition to title, author, etc)
 \newcommand{\mytitle}[1]{\def \@mytitle {#1}}
@@ -94,7 +94,6 @@
   \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
 }
 \pagestyle{fancyplain}
-
 
 
 
