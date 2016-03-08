@@ -1,0 +1,80 @@
+
+% festival-of-light.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet-multipage}
+
+\usepackage[pdftex,
+            pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Wear It! Part 2},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Wear It!}
+\subtitle{Part 2}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+\setcounter {section} {2}
+
+\section{Make Blocks Appear at the Click of  Your Fingers}
+\lstset{language=Python}
+
+You need to make sure the glove is connected to the CodeBug which is in turn connected to the Raspberry Pi. Enter the
+following code and run it. Then tap the copper strip on your forefinger against the cooper strip on your thumb.
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{codebug-part2.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\noindent The code checks if the 0 Leg of the CodeBug has been connected to the GND Leg to form a circuit (which happens
+when you tap the two bits of copper together). If they have, then the \lstinline{if} statement detects it and scrolls the
+message.
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Combine the Minecraft code with this code to make a block of TNT appear under the
+  player's feet (put the \lstinline{setBlock()} function inside the \lstinline{if} in place of the \lstinline{for}
+  loop. 
+\item\textbf{Silver Challenge:} Can you change the code to make other things happen when you tap the finger and thumb
+  together?
+\item\textbf{Gold Challenge:} Use some of the built in functions which are listed on the other sheet.
+\end{itemize}
+
+\newpage
+
+\section{Making Different Things Happen When Different Fingers Touch}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{codebug-part3.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi2}%
+%
+
+\noindent Using this code lets us make different things happen when you tap different fingers on your thumb
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Can you make it leave a much wider trail of blocks behind you if you tap one finger
+  rather than the others.
+
+\item\textbf{Silver Challenge:} Set one of the fingers to cause a cuboid 50x50x50 blocks in size of AIR to appear around
+  you (this is useful when you need to ``delete'' some work).
+
+\item\textbf{Gold Challenge:} Combine your code with some of the built in functions to make a series of things happen
+  around you when you tap different fingers on your thumb.
+
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

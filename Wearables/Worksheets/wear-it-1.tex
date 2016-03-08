@@ -1,0 +1,73 @@
+
+% festival-of-light.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+            pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Wear It! Part 1},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Wear It!}
+\subtitle{Part 1}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+
+\section{Make a Path of Blocks}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{trails1.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\noindent This will make a path of stone blocks appear under your feet wherever you go.\vspace{-0.3cm}
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the \textbf{x, y}, and \textbf {z} values so the blocks appear in different
+  places near to you.   
+\item\textbf{Silver Challenge:} Try using different block types (see the sheet for acceptable block types).
+\item\textbf{Gold Challenge:} By adding two lines of code and changing a third we can make a trail of randomly coloured
+  wool blocks follow us wherever we move. 
+\begin{enumerate}
+\item Add a new line after the first two, which reads \lstinline{import random}
+\item Add a new line after the \lstinline{while True:} line which reads \lstinline{colour = random.randint(0, 15)} 
+\item Modify the last line of code to read \lstinline{mc.setBlock(pos.x, pos.y-1, pos.z, block.WOOL.id, colour)} 
+\end{enumerate}
+\end{itemize}
+
+\section{Make the CodeBug Do Stuff}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{codebug-part1.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\noindent This makes a message scroll across the LEDs on the CodeBug
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} What happens if you remove the minus sign before the i? Why?
+
+\item\textbf{Silver Challenge:} Change the contents of the message. What other value needs changing?
+
+\item\textbf{Gold Challenge:} By adding a line that reads \lstinline{while True:} before the 
+        \lstinline{for i in range(50):} line, and indenting the last 3 lines another time, make the message repeat. 
+
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
