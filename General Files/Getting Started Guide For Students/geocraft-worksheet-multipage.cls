@@ -7,7 +7,7 @@
 % Based on work here:
 % See http://ankurdave.com/tex for more document classes.
 
-\LoadClass[12pt]{article}
+\LoadClass[a4paper, 12pt]{article}
 \ProvidesClass{geocraft-worksheet-multipage}
 
 
@@ -20,7 +20,7 @@
 \usepackage[usenames, dvipsnames]{color}
 
 
-\definecolor{greenish}{RGB}{0, 175, 80}
+\definecolor{greenish}{RGB}{90, 157, 51}
 \definecolor{brownish}{RGB}{163, 111, 65}
 \definecolor{Code}{rgb}{0,0,0}
 \definecolor{Decorators}{rgb}{0.2,0.2,0.2}

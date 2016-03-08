@@ -7,7 +7,7 @@
 % Based on work here:
 % See http://ankurdave.com/tex for more document classes.
 
-\LoadClass[12pt]{article}
+\LoadClass[a4paper, 12pt]{article}
 \ProvidesClass{geocraft-worksheet}
 
 
