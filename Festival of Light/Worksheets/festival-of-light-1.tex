@@ -1,0 +1,71 @@
+
+% festival-of-light.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Tripping the Light Fantastic Part 1},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Tripping the Light Fantastic}
+\subtitle{Part 1}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+
+\section{Make a Path of Blocks}\vspace{-0.5cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{trails1.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\noindent This code makes a path of stone blocks follow wherever you go. 
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the \textbf{x, y}, and \textbf
+  {z} values so the blocks appear in different places near to you.   
+
+\item\textbf{Silver Challenge:} Try different types of block. For example
+  \lstinline{block.WATER_FLOWING.id}.  
+
+\item\textbf{Gold Challenge:} Place blocks of Lava for the path using \lstinline{block.LAVA.id}
+
+\end{itemize}
+
+\section{Make Multi-Coloured Wool Block Paths}\vspace{-0.5cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{trails2.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\noindent This makes different randomly coloured wool blocks follow you as a path.
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Add a line before the \lstinline{while True:} which says \lstinline{red_amber_green = [14, 4, 5]}
+
+\item\textbf{Silver Challenge:} Change the colour line to read \lstinline{colour = random.choice(red_amber_green)}
+
+\item\textbf{Gold Challenge:} Lay paths with lots of red, amber and green blocks
+
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

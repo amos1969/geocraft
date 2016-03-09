@@ -1,0 +1,71 @@
+
+% festival-of-light.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Tripping the Light Fantastic Part 2},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Tripping the Light Fantastic}
+\subtitle{Part 2}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+\setcounter {section} {2}
+
+\section{Make the LEDs Flash}\vspace{-0.7cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{lights1.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\begin{itemize}\vspace{-0.5cm}
+\item\textbf{Bronze Challenge:} Try changing the red part of \lstinline{red.on()} and \lstinline{red.off()} to use green 
+  and amber.\vspace{-0.1cm}
+
+\item\textbf{Silver Challenge:} Can you make different LEDs flash on and off in sequence.\vspace{-0.1cm}
+
+\item\textbf{Gold Challenge:} Change the code so that you get different combinations of LED on and off at the same
+  time. \vspace{-0.1cm}
+
+\end{itemize}
+
+\section{Make LEDs Flash when specific Blocks are underfoot}\vspace{-0.7cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{lights2.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\noindent Run the above code and move over the top of one of the red wool blocks. The red LED should flash on.
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the code so that it flashes the other LEDs when other colour blocks are under
+  your feet. (Amber is when \lstinline{blockType.data} equals 4, green when it equals 5)\vspace{-0.1cm}
+
+\item\textbf{Silver Challenge:} Change the code so that there are three if's, one for each colour.\vspace{-0.1cm}
+
+\item\textbf{Gold Challenge:} In each if statement, turn off the other LEDs when a new one is switched on.\vspace{-0.1cm}
+
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

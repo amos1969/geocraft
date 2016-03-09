@@ -1,0 +1,48 @@
+
+% festival-of-light.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Tripping the Light Fantastic Part 3},
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Tripping the Light Fantastic}
+\subtitle{Just the code}
+
+\date{}
+
+\maketitle
+
+\pagenumbering{gobble}
+\setcounter {section} {4}
+
+\section{Make a Path of Blocks}\vspace{-0.8cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{trails.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi}%
+%
+
+\section{Make the LEDs Flash}\vspace{-0.8cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{lights.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{mosi2}%
+%
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
