@@ -29,40 +29,43 @@
 \AddBackgroundImage{Start}{End}{mosi}%
 %
 
-\noindent This will make a path of stone blocks appear under your feet wherever you go.\vspace{-0.3cm}
+\noindent This code creates a stone block path beneath your feet.
+
 \begin{itemize}
-\item\textbf{Bronze Challenge:} Change the \textbf{x, y}, and \textbf {z} values so the blocks appear in different
-  places near to you.   
-\item\textbf{Silver Challenge:} Try using different block types (see the sheet for acceptable block types).
-\item\textbf{Gold Challenge:} By adding two lines of code and changing a third we can make a trail of randomly coloured
-  wool blocks follow us wherever we move. 
-\begin{enumerate}
-\item Add a new line after the first two, which reads \lstinline{import random}
-\item Add a new line after the \lstinline{while True:} line which reads \lstinline{colour = random.randint(0, 15)} 
-\item Modify the last line of code to read \lstinline{mc.setBlock(pos.x, pos.y-1, pos.z, block.WOOL.id, colour)} 
-\end{enumerate}
+\item\textbf{Bronze Challenge:} Change the block type to be exploding TNT: \lstinline{block.TNT.id, 1}
+
+\item\textbf{Silver Challenge:} Change the coordinates to leave a trail in different places, try 
+    \textbf{above your head}. Try placing multiple blocks at a time.
+
+\item\textbf{Gold Challenge:} By placing more than one block leave a pathway made of gold and diamonds. 
+
 \end{itemize}
 
-\section{Make the CodeBug Do Stuff}
+
+\section{Making Random Trails}\vspace{-0.5cm}
+
 
 \noindent% Line above MUST be blank
 \tikzmark{Start}%
-\lstinputlisting{codebug-part1.py}\vspace{0.2cm}
+\lstinputlisting{trails2.py}\vspace{0.1cm}
 \tikzmark{End}
 \AddBackgroundImage{Start}{End}{mosi}%
 %
 
-\noindent This makes a message scroll across the LEDs on the CodeBug
+\noindent The import random gives us access to Python's random number functions, which we use to place random types of
+block. We can also use \lstinline{random.choice} to choose a random item in a list.
 
 \begin{itemize}
-\item\textbf{Bronze Challenge:} What happens if you remove the minus sign before the i? Why?
+\item\textbf{Bronze Challenge:} Change the code to make it select a random \lstinline{STONE_SLAB} type (they are
+numbered 0 to 5).
 
-\item\textbf{Silver Challenge:} Change the contents of the message. What other value needs changing?
+\item\textbf{Silver Challenge:} Change the code to make it place a random \lstinline{WOOL} block colour (the colours run
+from 0 to 15).
 
-\item\textbf{Gold Challenge:} By adding a line that reads \lstinline{while True:} before the 
-        \lstinline{for i in range(50):} line, and indenting the last 3 lines another time, make the message repeat. 
-
+\item\textbf{Gold Challenge:} Use \lstinline{random.choice([block.STONE.id, block.DIRT.id])}  to place a random
+block. Add different block types to the list to make it more exciting.
 \end{itemize}
+
 
 \end{document}
 
