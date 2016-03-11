@@ -20,35 +20,14 @@
 \pagenumbering{gobble}
 \setcounter {section} {2}
 
-\section{Make Blocks Appear at the Click of  Your Fingers}
+
+\section{Making Things Happen At the Click of a Finger}
 \lstset{language=Python}
 
 You need to make sure the glove is connected to the CodeBug which is in turn connected to the Raspberry Pi. Enter the
 following code and run it. Then tap the copper strip on your forefinger against the copper strip on your thumb.
 
-\noindent% Line above MUST be blank
-\tikzmark{Start}%
-\lstinputlisting{codebug-part2.py}\vspace{0.2cm}
-\tikzmark{End}
-\AddBackgroundImage{Start}{End}{mosi}%
-%
 
-\noindent The code checks if the 0 Leg of the CodeBug has been connected to the GND Leg to form a circuit (which happens
-when you tap the two bits of copper together). If they have, then the \lstinline{if} statement detects it and scrolls the
-message.
-
-\begin{itemize}
-\item\textbf{Bronze Challenge:} Combine the Minecraft code with this code to make a block of TNT appear under the
-  player's feet (put the \lstinline{setBlock()} function inside the \lstinline{if} in place of the \lstinline{for}
-  loop. 
-\item\textbf{Silver Challenge:} Can you change the code to make other things happen when you tap the finger and thumb
-  together?
-\item\textbf{Gold Challenge:} Use some of the built in functions which are listed on the other sheet.
-\end{itemize}
-
-\newpage
-
-\section{Making Different Things Happen When Different Fingers Touch}
 
 \noindent% Line above MUST be blank
 \tikzmark{Start}%
