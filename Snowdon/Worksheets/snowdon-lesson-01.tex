@@ -1,0 +1,81 @@
+
+% snowdon-leeson-01.tex - Our first LaTeX example!
+
+\documentclass{geocraft-worksheet}
+
+\usepackage[pdftex,
+             pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft: Programming on Snowdon Part 2 -
+              Iteration}, 
+            pdfcreator={LaTeX with hyperref and listings}]{hyperref}
+
+\begin{document}
+
+\title{Programming on Snowdon}
+\subtitle{Part 1 - Sequencing}
+
+\maketitle
+
+\pagenumbering{gobble}
+
+\section{Place a Snow Block}\vspace{-0.5cm}
+\lstset{language=Python}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{01-diamond.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{snowdon}%
+%
+
+\noindent This code creates a gold block at your feet.\\
+
+\begin{itemize}
+\item\textbf{Bronze Challenge:} Change the x, y, and z values so the block
+appears next to you. \newline Try \textbf{x + 2} or \textbf{y + 3}. 
+
+\item\textbf{Silver Challenge:} Try different blocks. For example
+\lstinline{block.GOLD_ORE.id} instead. 
+
+\item\textbf{Gold Challenge:} Place a block of exploding TNT using
+\lstinline{block.TNT.id, 1}. Hit the block and see what happens.
+\end{itemize}
+
+\noindent Finish off by changing it so that your code places a snow block
+(\lstinline{block.SNOW_BLOCK.id}) next to your feet.
+
+\section{Place a Larger Block}\vspace{-0.5cm}
+
+\noindent% Line above MUST be blank
+\tikzmark{Start}%
+\lstinputlisting{02-glass.py}\vspace{0.2cm}
+\tikzmark{End}
+\AddBackgroundImage{Start}{End}{snowdon}%
+%
+
+\noindent The \textbf{x1, y1, z1} are the coordinates of the other corner of the
+cuboid. \\
+
+\begin{itemize}
+\item\noindent\textbf{Bronze Challenge:} Can you create different size
+cuboids?  
+
+\item\noindent\textbf{Silver Challenge:} Can you create a holiday home to stay in
+using a different material and furnish it. \textbf{HINT:} Create a
+second large block inside the first one, but make this one out of air
+(\lstinline{block.AIR.id}) to make the holiday home hollow. Can you
+add doors and windows using python?
+
+\item\noindent\textbf{Gold Challenge:} Can you create a row of holiday homes?
+\end{itemize}
+
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

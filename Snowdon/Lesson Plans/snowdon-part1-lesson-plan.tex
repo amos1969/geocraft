@@ -1,0 +1,179 @@
+
+\documentclass{geocraft-lesson-plan}
+
+\usepackage[pdftex,
+            pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft Lesson Plan: Programming Snowdon Part 1 - Sequencing},
+            pdfcreator={LaTeX with hyperref and listings},
+            urlbordercolor={1 1 1}]{hyperref}
+
+
+\begin{document}
+
+\mytitle{Programming Snowdon}
+\subtitle{Part 1 - Sequencing}
+\duration{1 hour}
+
+\section*{Overview} This is one of a series of lessons aimed at using Minecraft and Python on the Raspberry Pi to
+develop students’ basic understanding of programming. In this series we use the area around Mount Snowdon as our
+location, and build up gradually to the point where students will have enough knowledge to make changes to the
+environment on Snowdon.  
+
+\section*{Objectives}
+\begin{itemize}
+\item Use sequencing in programs.
+\item Call built in functions to perform specific operations.
+\item Detect and correct errors in algorithms and programs.
+\item Use logical reasoning to explain how a simple algorithm works. 
+\item Design and debug programs that accomplish certain goals.
+\item Realise that calling the same function with different parameters will cause it to have different effects. 
+\end{itemize}
+
+\section*{Python constructs used}
+\begin{itemize}
+\item Use an external code library.
+\item Create a variable and assign a value to it.
+\item Call a function which is predefined in a library (access it using dot notation).
+\item Pass parameters into a function when it is called.
+\end{itemize}
+
+\section*{MinecraftPi API Functions used}
+\begin{itemize}
+\item Import the main Minecraft module.
+\item Import the blocks module.
+\item Call the create function to establish a connection to Minecraft and store the link in a variable.
+\item Use the player get position function to get x, y, and z coordinates of the player.
+\item Call the setBlock function to set a specific block type at specific coordinates.
+\item Pass data to a block to change its' behaviour.
+\item Use the setBlocks function to create a larger cuboid.
+\end{itemize}
+
+\section*{Introduction to Snowdon Theme}
+\begin{itemize}
+\item Ask pupils to find Mount Snowdon on a map, or fly to it from your own location using Google Earth. 
+\item  Where is it in relation to your school? Ensure they know that Snowdon is a mountain (1085m) and is part of the
+  Snowdonia National Park.  
+\end{itemize}
+
+\section*{Video Starter}
+\begin{itemize}
+\item YouTube explanation of sequencing: 
+  {\textcolor{greenish}
+    {\url{https://www.youtube.com/watch?v=FHsuEh1kJ18}}}
+\end{itemize}
+
+\section*{Unplugged Starter}
+You may need to register with Barefoot Computing to access the following resource, don't worry it's free.
+\begin{itemize}
+\item Have a look at some of the following activities:
+  {\textcolor{greenish}
+    {\url{http://barefootcas.org.uk/barefoot-primary-computing-resources/concepts/programming/sequence/}}}
+\end{itemize}
+
+\section*{Introduction to Minecraft on the Raspberry Pi}
+\begin{itemize}
+\item Allow pupils time to tinker and orientate themselves in the Minecraft game. Perhaps get them to build a colourful house. 
+\item Once they've spent some time just playing with Minecraft, get them to open Idle3 from the Programming section of
+  the Menu.
+\item Explain that this starts the Python Shell which is where any messages from Python will be displayed. For instance
+  if they introduce a bug into their code this is probably where the error message will display.
+\item Explain that they need to create a new file to hold their Python code. They can do this by clicking on the File
+  Menu in the Python Shell window and selecting ``New File''. This should open a new window. 
+\item In this new window they need to click on the File Menu and select ``Save As''. Call the file by their name and
+  click Okay.
+\item When they start writing their code they need to do it in this new, empty file, which they have just created.
+\end{itemize}
+
+\section*{Related Activities}
+\begin{itemize}
+\item Minecraft uses 3D Cartesian Coordinates, you may need to discuss how these work with students.
+\item The x-axis and z-axis run parallel to the floor, the y-axis runs vertically (positive y is up).
+\item It may be useful to get students to physically model and plan out what they are doing in the Minecraft world. This
+  can be done using things like, squared paper, multilink cubes and Lego. 
+\item Work in Maths on volume might usefully be linked to this.
+\end{itemize}
+
+
+\section*{Main Activity}
+\begin{itemize}
+\item This activity focuses on sequencing, in other words putting Python instructions in the correct order, to cause a
+  specific goal to be achieved.
+\item The first part is specifically about the students becoming familiar with how to write a Python program which will
+  talk to Minecraft on the Raspberry Pi and cause a block to appear.
+\item The first program does the following.
+\item Firstly we import the Minecraft module into our program, which contains the functions (technically methods) which
+  allow us to talk to Minecraft.
+\item The second line imports the blocks module, which gives us access to the various blocks which are available to us
+ programmatically in MinecraftPi. 
+\item We then have a line which creates a new variable called \textbf{mc} which holds the ``connection'' to the
+  Minecraft game. The right hand side of the equals sign features a function which creates this.
+\item The fourth line of code also creates a new variable called \textbf{pos}. The right hand side of the equals sign is
+  a function which gets the coordinates of the player. These are then stored in the variable.
+\item We then have a number of lines of code, which create x, y and z variables to hold the corresponding values based
+  on the player's position.
+\item The final line of code uses the \textbf{setBlock()} function, which in this case takes 4 parameters. The x, y and
+  z coordinates at which to place the block, and the type of block to place there.
+\item Running the code should make a Gold block appear next to the player's feet.
+\item The \textbf{Bronze Challenge} gets the student to investigate what making changes to the coordinates has on where
+  the block will appear. It might be useful to make changes of the form \textbf{x+5} rather than specific numbers, here,
+  so that the blocks appear near to the player, rather than at random positions. (\textbf{HINT:} The player's current
+  coordinates in the Minecraft world are displayed in the top left hand corner of the window.)
+\item The \textbf{Silver Challenge} gets the student to experiment with different block types. There is a list of all of
+  the available blocks in the General Files.
+\item The \textbf{Gold Challenge} gets the user to place a TNT block, but also pass in some data to that block (did you
+  notice the \textbf{, 1} after the block type is defined. The TNT block which is then created, will explode when you
+  mine it.
+\item The second example program contains many lines of code which are repeated from the first. The new variables x1, y1
+  and z1 are the coordinates of a second point in the Minecraft world. The two points (x, y, z) and (x1, y1, z1) are the
+  opposite vertices of a cuboid which is created in the last line of code by the \textbf{setBlocks()} function (notice
+  the extra \textbf{s} at the end of the function name.
+\item The \textbf{Bronze Challenge} asks the students to change the size of the cuboid that is created.
+\item The \textbf{Silver Challenge} asks the students to create buildings by making a cuboid of air inside another, they
+  may need to think carefully about how to position the air block relative to the solid one.
+\item The \textbf{Gold Challenge} then asks them to use repeated code to create a row of holiday homes on Snowdon. (This
+  is much easier to do with functions, but the students may not have covered these yet.)
+\end{itemize}
+
+\section*{Plenary - Suggested Activities}
+\begin{itemize}
+\item Pick a couple of pairs to show and explain what they did with
+  the code. 
+\item Check whole class understanding with quick fire questions about
+  different parts of the code. 
+\end{itemize}
+
+
+\section*{Stretch \& Challenge}
+\begin{itemize}
+\item Can students create an entire village using code?
+\end{itemize}
+
+\section*{Support}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\section*{Assessment Opportunities}
+\begin{itemize}
+\item Photographs taken of the code to assess understanding. 
+\item Children explain what they have done in an evaluation sheet or Computing log.  
+\end{itemize}
+
+%\section*{Key Vocabulary}
+
+%\section*{Curriculum Links}
+
+\section*{Resources}
+\begin{itemize}
+\item Snowdon map and Introductory Sheet
+\item Snowdon worksheet 1
+\end{itemize}
+
+%\section*{Useful Links}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
