@@ -5,8 +5,8 @@
 
 \usepackage[pdftex,
              pdfauthor={Sarah Zaman \& Dave Ames},
-            pdftitle={GeoCraft: Programming on Snowdon Part 2 -
-              Iteration}, 
+            pdftitle={GeoCraft: Programming on Snowdon Part 1 -
+              Sequencing}, 
             pdfcreator={LaTeX with hyperref and listings}]{hyperref}
 
 \begin{document}
@@ -31,8 +31,8 @@
 \noindent This code creates a gold block at your feet.\\
 
 \begin{itemize}
-\item\textbf{Bronze Challenge:} Change the x, y, and z values so the block
-appears next to you. \newline Try \textbf{x + 2} or \textbf{y + 3}. 
+\item\textbf{Bronze Challenge:} Change the \textbf{pos.x}, \textbf{pos.y}, and \textbf{pos.z} values so the block
+  appears next to you. \newline Try \textbf{pos.x + 2} or \textbf{pos.y + 3}.  
 
 \item\textbf{Silver Challenge:} Try different blocks. For example
 \lstinline{block.GOLD_ORE.id} instead. 
@@ -53,24 +53,19 @@ appears next to you. \newline Try \textbf{x + 2} or \textbf{y + 3}.
 \AddBackgroundImage{Start}{End}{snowdon}%
 %
 
-\noindent The \textbf{x1, y1, z1} are the coordinates of the other corner of the
-cuboid. \\
+\noindent Lines 7 and 8 are just continuations of the code on Line 6, they could all be replaced with a single line of
+code containing the same contents. The two sets of coordinates are the corners (vertices) of a cuboid, which are
+diagonally opposite to each other.
 
 \begin{itemize}
-\item\noindent\textbf{Bronze Challenge:} Can you create different size
-cuboids?  
+\item\textbf{Bronze Challenge:} Can you create different size cuboids?  
 
-\item\noindent\textbf{Silver Challenge:} Can you create a holiday home to stay in
-using a different material and furnish it. \textbf{HINT:} Create a
-second large block inside the first one, but make this one out of air
-(\lstinline{block.AIR.id}) to make the holiday home hollow. Can you
-add doors and windows using python?
+\item\textbf{Silver Challenge:} Can you create a holiday home to stay in using a different material and furnish
+  it. \textbf{HINT:} Create a second large block inside the first one, but make this one out of air
+  (\lstinline{block.AIR.id}) to make the holiday home hollow. Can you add doors and windows using python?
 
-\item\noindent\textbf{Gold Challenge:} Can you create a row of holiday homes?
+\item\textbf{Gold Challenge:} Can you create a row of holiday homes?
 \end{itemize}
-
-
-
 
 \end{document}
 
