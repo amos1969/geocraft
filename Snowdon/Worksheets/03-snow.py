@@ -1,9 +1,7 @@
 from mcpi.minecraft import Minecraft
-import mcpi.block as block
+from mcpi import block
 mc = Minecraft.create()
+
 while True:
     pos = mc.player.getPos()
-	x = pos.x
-	y = pos.y
-	z = pos.z
-    mc.setBlock(x, y - 1, z, block.SNOW.id)
+    mc.setBlock(pos.x, pos.y-1, pos.z, block.SNOW.id)
