@@ -109,10 +109,9 @@ You may need to register with Barefoot Computing to access the following resourc
   Minecraft game. The right hand side of the equals sign features a function which creates this.
 \item The fourth line of code also creates a new variable called \textbf{pos}. The right hand side of the equals sign is
   a function which gets the coordinates of the player. These are then stored in the variable.
-\item We then have a number of lines of code, which create x, y and z variables to hold the corresponding values based
-  on the player's position.
-\item The final line of code uses the \textbf{setBlock()} function, which in this case takes 4 parameters. The x, y and
-  z coordinates at which to place the block, and the type of block to place there.
+\item The final line of code uses the \textbf{setBlock()} function, which in this case takes 4 parameters, the x, y and
+  z coordinates, which are embedded in the \textbf{pos} variable, at which to place the block, and the type of block to
+  place there. 
 \item Running the code should make a Gold block appear next to the player's feet.
 \item The \textbf{Bronze Challenge} gets the student to investigate what making changes to the coordinates has on where
   the block will appear. It might be useful to make changes of the form \textbf{x+5} rather than specific numbers, here,
@@ -123,23 +122,20 @@ You may need to register with Barefoot Computing to access the following resourc
 \item The \textbf{Gold Challenge} gets the user to place a TNT block, but also pass in some data to that block (did you
   notice the \textbf{, 1} after the block type is defined. The TNT block which is then created, will explode when you
   mine it.
-\item The second example program contains many lines of code which are repeated from the first. The new variables x1, y1
-  and z1 are the coordinates of a second point in the Minecraft world. The two points (x, y, z) and (x1, y1, z1) are the
-  opposite vertices of a cuboid which is created in the last line of code by the \textbf{setBlocks()} function (notice
-  the extra \textbf{s} at the end of the function name.
+\item The second example program contains many lines of code which are repeated from the first. The \textbf{setBlocks()}
+  function takes at least 7 parameters, two sets of coordinates, and the type of block to place. The two sets of
+  coordinates are the diametrically opposed corners of the cuboid you are creating.
 \item The \textbf{Bronze Challenge} asks the students to change the size of the cuboid that is created.
-\item The \textbf{Silver Challenge} asks the students to create buildings by making a cuboid of air inside another, they
-  may need to think carefully about how to position the air block relative to the solid one.
+\item The \textbf{Silver Challenge} asks the students to create buildings by making a cuboid of air inside another,
+  solid cuboid, they may need to think carefully about how to position the air block relative to the solid one.
 \item The \textbf{Gold Challenge} then asks them to use repeated code to create a row of holiday homes on Snowdon. (This
   is much easier to do with functions, but the students may not have covered these yet.)
 \end{itemize}
 
 \section*{Plenary - Suggested Activities}
 \begin{itemize}
-\item Pick a couple of pairs to show and explain what they did with
-  the code. 
-\item Check whole class understanding with quick fire questions about
-  different parts of the code. 
+\item Pick a couple of pairs to show and explain what they did with the code. 
+\item Check whole class understanding with quick fire questions about different parts of the code. 
 \end{itemize}
 
 
