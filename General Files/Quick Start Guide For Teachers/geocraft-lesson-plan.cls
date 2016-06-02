@@ -9,7 +9,7 @@
 
 \ProvidesClass{geocraft-lesson-plan}
 
-\LoadClass[a4paper, 12pt]{article}
+\LoadClass[12pt]{article}
 
 % fields that user can set (in addition to title, author, etc)
 \newcommand{\mytitle}[1]{\def \@mytitle {#1}}
@@ -49,6 +49,40 @@
 \usepackage{sectsty}
 \sectionfont{\color{brownish}\bfseries\fontsize{14}{17}\selectfont}
 
+\usepackage{listings}
+\lstset{
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=1em,
+xleftmargin=1em,
+framextopmargin=2em,
+framexbottommargin=2em,
+showspaces=false,
+showtabs=false,
+showstringspaces=false,
+frame=l,
+tabsize=4,
+breaklines=true,
+postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+% Basic
+basicstyle=\ttfamily\small\setstretch{1},
+language=Python,
+% Comments
+commentstyle=\color{Comments},
+% Strings
+stringstyle=\color{Strings},
+morecomment=[s][\color{Strings}]{"""}{"""},
+morecomment=[s][\color{Strings}]{'''}{'''},
+% keywords
+morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+keywordstyle={\color{Keywords}\bfseries},
+% additional keywords
+morekeywords={[2]@invariant},
+keywordstyle={[2]\color{Decorators}\slshape},
+emph={self},
+emphstyle={\color{self}\slshape},
+%
+}{}
 
 % fonts
 \newenvironment{titlefont}{\fontfamily{pag}\bfseries\selectfont}{\par}
@@ -94,6 +128,7 @@
   \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
 }
 \pagestyle{fancyplain}
+
 
 
 

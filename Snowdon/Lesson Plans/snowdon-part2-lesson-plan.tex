@@ -2,9 +2,8 @@
 \documentclass{geocraft-lesson-plan}
 
 \usepackage[pdftex,
-             pdfauthor={Sarah Zaman \& Dave Ames},
-            pdftitle={GeoCraft Lesson Plan: Programming Snowdon Part
-              2- Iteration},
+            pdfauthor={Sarah Zaman \& Dave Ames},
+            pdftitle={GeoCraft Lesson Plan: Programming Snowdon Part 2- Iteration},
             pdfcreator={LaTeX with hyperref and listings},
             urlbordercolor={1 1 1}]{hyperref}
 
@@ -16,12 +15,10 @@
 %\agerange{5/6/7}
 \duration{1 hour}
 
-\section*{Overview}
-This is one of a series of lessons aimed at using Minecraft and Python
-on the Raspberry Pi to develop students’ basic understanding of
-programming. In this series we use the area around Mount Snowdon as
-our location, and build up gradually to the point where students will
-have enough knowledge to make changes to the environment on Snowdon.  
+\section*{Overview} This is one of a series of lessons aimed at using Minecraft and Python on the Raspberry Pi to
+develop students’ basic understanding of programming. In this series we use the area around Mount Snowdon as our
+location, and build up gradually to the point where students will have enough knowledge to make changes to the
+environment on Snowdon.  
 
 \section*{Objectives}
 \begin{itemize}
@@ -33,6 +30,28 @@ have enough knowledge to make changes to the environment on Snowdon.
 \item Design and debug programs that accomplish certain goals.
 \end{itemize}
 
+\section*{Python constructs used}
+\begin{itemize}
+\item Use an external code library.
+\item Create a variable and assign the return value from a function to it.
+\item Use a while loop (actually an infinite loop).
+\item Use an externally defined function.
+\item Pass parameters to an externally defined function.
+\item Create a list.
+\item Select an item randomly from a list.
+\end{itemize}
+
+\section*{Minecraft API Functions Used}
+\begin{itemize}
+\item Import the main Minecraft module.
+\item Import the blocks module..
+\item Call the crate function to establish a link to Minecraft.
+\item Get the player's position and store it in a variable.
+\item Call the setBlock() function in order to place a block below the player's feet.
+\item Pass data to a block.
+\item Place multiple blocks by using multiple setBlock() functons.
+\end{itemize}
+
 \section*{Video Starter}
 \begin{itemize}
 \item YouTube explanation of iteration (by Mark Zuckerberg):
@@ -42,64 +61,150 @@ have enough knowledge to make changes to the environment on Snowdon.
 
 \section*{Unplugged Starter}
 \begin{itemize}
-\item Use this resource from code.org, to help students grasp the
-  concept of iteration (loops): 
+\item Use this resource from code.org, to help students grasp the concept of iteration (loops):  
   {\textcolor{greenish}
     {\url{https://code.org/curriculum/course2/5/Activity5-GettingLoopy.pdf}}} 
-\item If you feel that the students need to spend longer on loops and 
-  iteration, there is a complete lesson here: 
+\item If you feel that the students need to spend longer on loops and iteration, there is a complete lesson here:  
   {\textcolor{greenish}
     {\url{https://code.org/curriculum/course2/5/Teacher}}} 
 \end{itemize}
 
-\section*{Introduction to Minecraft on the Raspberry Pi}
+\section*{Programming Minecraft Reminder}
 \begin{itemize}
-\item Talk through the introduction sheet with the children to help
-  familiarise them with how to start programming in Minecraft Pi. 
-\item Allow pupils time to tinker and orientate themselves in the
-  Minecraft game. Build a colourful house. 
+\item Remind students how to move in the game if necessary.
+\item Remind them to start the Python Shell, using IDLE3, in the Programming Section of the Raspberry Pi Main Menu.
+\item Remind them to create a new file to hold their program and save it with an appropriate name.
+\item Also remind them that the Shell is not where the program is written, but is where any error messages will be
+  displayed. 
+\item Remind them that when they make a change they will need to rerun their program to ensure it works.
+\end{itemize}
+
+\section*{Related Activities}
+\begin{itemize}
+\item Use Lego blocks, multilink or other cubes to allow students to plan out their constructions.
+\item Squared paper may help students visualise how the blocks are arranged.
+\item Discuss visualisations of 3D shapes in Maths
+\item Perhaps link it directly to some Maths activities such as: 
+  {\textcolor{greenish}
+    {\url{https://nrich.maths.org/2392}}}
 \end{itemize}
 
 \section*{Main Activity}
 \begin{itemize}
-\item Explain to children they will be entering Python code to make a
-  path which follows the player as they go up and down the mountain. 
-\item Ask pupils to begin entering the code and then remind pupils how
-  to run it. 
-\item Children enter code and attempt the challenges to develop and
-  extend their understanding of the code they’ve just written. 
-\item Explain to the children they will be entering Python code to
-  make a random trail. 
-\item Discuss how random commands in Python work both how to choose a
-  random number or choose a random item from a list. 
-\item Pupils enter the code and attempt the challenges. 
+\item Remind students that they will be entering Python code to create a program which will make things happen in the
+  Minecraft world.
+\item Explain to students that they will be entering code that will place a trail of blocks beneath their feet (and
+  elsewhere) wherever they go.
+\item The first piece of code that they will enter does the following.
+\item The first line gives us access to the Minecraft Python library.
+\item The second imports the details of all of the blocks which are available to us in Minecraft.
+\item The third line creates the connection to Minecraft using the library we imported in the very first line and then
+  stores it in the variable \textbf{mc}, which is what we then use, whenever we need to communicate with the game.
+\item Line five, introduces a new Python construct, namely the \textbf{while} loop. This is the basis of the iteration
+  we use in this activity. The command \textbf{while True:} starts an infinite loop (one that won't stop unless we tell
+  it to). Each of the commands, which are indented, on the following lines will be executed in order, over and over, until
+  we stop the program from running.
+\item The sixth line, which gets executed on each iteration of the loop (each time we go through it), uses the link to
+  Minecraft (\textbf{mc}) to get the player's position (as 3d coordinates x, y and z), and stores them in the variable
+  \textbf{pos}.
+\item The seventh line of code, uses our connection to Minecraft once more, this time to set a block in the world. The
+  \textbf{setBlock} function takes a number of parameters, the first three are the coordinates at which to place the
+  block. The second one \textbf{pos.y-1} specifies that the block we place will be beneath the players feet
+  (\textbf{pos.y} would have placed the block where the bottom half of the player's body is situated). The fourth
+  parameter is the type of block we wish to place (here it is a snow block). There is also a fifth optional parameter
+  which would be data to be passed to the block to change it's behaviour, we don't use this here.
+\item These last two lines are repeated over and over, placing a block of snow beneath the player's feet.
+\item The \textbf{Bronze Challenge} then gets us to change the block type which we are placing beneath our feet, the
+  \textbf{Minecraft Blocks} sheet has a list of the available blocks. Change the \textbf{block.SNOW.id} code replacing
+  the \textbf{SNOW} part with the name of the block we want (in capitals). If you choose to place exploding TNT, then
+  we supply the optional fifth parameter to the \textbf{setBlock} function. That is we put \textbf{, 1} after the
+  \textbf{block.TNT.id} code and before the closing bracket.
+\item The \textbf{Silver Challenge} then asks the student to experiment with modifying the coordinates \textbf{pos.x,
+    pos.y} and \textbf{pos.z} in order to vary where the block appears relative to the player. This is best done by
+  adding or subtracting a value to one of these variables, so that the block is placed relative to the player. If they
+  only replace them with a number, then although the blocks will still be placed, it may be difficult to track down
+  where the blocks have been placed.
+\item The \textbf{Gold Challenge} asks the students to make multiple trails appear relative to the player. This can be
+  done by duplicating the final line of code (the one with the \textbf{setBlock} function). Make sure it is indented in
+  line with the other lines. Change at least one coordinate in this last line of code (if we keep the coordinates
+  identical then the block placed by this final line of code, will replace the block placed in the previous one), and
+  possibly the block type too. 
+\item The second half of the worksheet, details how to make random blocks (and types of blocks) appear beneath the
+  players feet.
+\item The example code starts of in the same way as the previous code, the first change is on line three, where we have
+  a new piece of code, which gives us access to the \textbf{random} library which has a variety of functions installed,
+  that deal with randomness (or at least pseudo-randomness) in Python.
+\item The next new line of code is at line eight which creates a new variable called \lstinline{block_type} and sets it to
+  a random integer (whole number) between 0 and 3, inclusive. This is reset to a new value between 0 and 3 on each
+  iteration of the loop (each time the loop runs).
+\item This time the last line of code, sets the block to be a \lstinline{STONE_BRICK} block, but passes it the random value
+  that is stored in \lstinline{block_type} as data. The \lstinline{STONE_BRICK} block type comes in 4 different versions,
+  stone brick, mossy stone brick, cracked stone brick and chiseled stone brick. These correspond to the random value
+  stored in \lstinline{block_type}. So each time through the loop, the block under the player's feet is replaced by one of
+  the four \lstinline{STONE_BRICK} types. If the player stands still, and looks at their feet, then it will be possible to
+  see the block flickering as the block is constantly replaced. 
+\item The \textbf{Bronze Challenge} asks the students to change the block to be a \lstinline{STONE_SLAB}, if they set line
+  eight to choose random values between 0 and 5 then this time it will choose one of the six types of block which a
+  \lstinline{STONE_SLAB} can take.
+\item The \textbf{Silver Challenge} asks the students to change the block which is being placed to a \textbf{WOOL}
+  block. If they then change the random value to be one between 0 and 15 it will this time use all 16 different possible
+  colours to make a random multicoloured trail behind the player.
+\item The \textbf{Gold Challenge} changes the function we use to make a random choice. This time make line eight be the
+  line of code shown on the sheet as an example (the one beginning \lstinline{some_blocks}. This line of code creates a
+  list, which contains various blocks. They can add more blocks to the list, separating them from previous ones using
+  commas. If they then change the final line to read: 
+  \lstinline{mc.setBlock(pos.x, pos.y-1, pos.z,random.choice(some_blocks))} 
+  then it will randomly select a random block from the list, each time through the loop, to be placed under the player's
+  feet. 
 \end{itemize}
 
-\section*{Plenary}
+\section*{Plenary - Suggested Activities}
 \begin{itemize}
-\item Pick a couple of pairs to show and explain what they did with
-  the code. 
-\item Check whole class understanding with quick fire questions about
-  different parts of the code. 
+\item Pick a couple of pairs to show and explain what they did with the code. 
+\item Give students exit tickets, containing example code similar to the code in these lessons, get them to explain what
+  it does.
+\item Give students code which is meant to do one thing, but which contains errors, get them to explain where the errors
+  are.
+\item Give students code which is meant to do one thing, but which contains errors, get them to fix the code and make it
+  run. 
+\item Get students to systematically sabotage each others' code and then ask the original author to fix (make sure they
+  save the original code separately first).
+\item Get them to complete a ``two stars and a wish'' exit ticket.
+\item Check whole class understanding with quick fire questions about different parts of the code. 
+\item Use Red/Amber/Green cards to answer multiple choice questions about the code.
 \end{itemize}
 
 
 \section*{Stretch \& Challenge}
 \begin{itemize}
-\item See the Gold Challenge
+\item If they have completed the Gold Challenge then students could then be asked to supply random data to the various
+  block types which are selected randomly from the list, it should be possible to use an if statement (or multiple ones)
+  to choose the values between which the data runs, dependent upon the type of block.  
 \end{itemize}
 
 \section*{Support}
 \begin{itemize}
-\item Some children may need reassurance if they have lots of the
-  errors in the code so pair children with appropriate partners. 
+\item Some children may need reassurance if they have lots of the errors in the code so pair children with appropriate
+  partners.
+\item Insist that students must have asked 3 of their compatriots for help before consulting with the teacher.  
+\item Get students to make use of the Python Documentation which is accessible through the help menu (a web connection
+  is often required for this). Students are to document the searches they have used prior to asking for help.
+\item Teach students to use Google to search for errors when they need help.
+\item Teach students to use StackOverflow to search for help.
+\item Devise screencasts explaining vital concepts which are to be used in a lesson.
+\item Get students to create screencasts, explaining the concepts which can then be accessed by their colleagues during
+  subsequent lessons. 
 \end{itemize}
 
 \section*{Assessment Opportunities}
 \begin{itemize}
 \item Photographs taken of the code to assess understanding. 
-\item Children explain what they have done in an evaluation sheet or
-  Computing log.  
+\item Set student's a specific goal to achieve, and then assess their resulting code against the initial requirements
+  you set.
+\item Ask students to design code, to fulfil a specific task.
+\item Get students to fully annotate their code, assess their work based on the quality of their explanations.
+\item Give students a partially complete piece of code and ask them to complete it to fulfil a given task.
+\item Children explain what they have done in an evaluation sheet or Computing log.  
 \end{itemize}
 
 %\section*{Key Vocabulary}
@@ -109,7 +214,7 @@ have enough knowledge to make changes to the environment on Snowdon.
 \section*{Resources}
 \begin{itemize}
 \item Snowdon map 
-\item Introductory Sheet
+\item Minecraft Blocks Sheet
 \item Snowdon Worksheet 2
 \end{itemize}
 
