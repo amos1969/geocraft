@@ -1,1 +1,1 @@
-LaTeX Files for creating GeoCraft Worksheets and Lesson Plans created using Auctex and Emacs
+LaTeX Files for creating GeoCraft Worksheets and Lesson Plans created using Auctex and Emacs. Can probably be used with a tool like xelatex to generate the files outside of Emacs.
